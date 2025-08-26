@@ -1,0 +1,4091 @@
+/* Styles pour Gaisio Earthquake Manager */
+
+/* Variables CSS pour les couleurs */
+:root {
+    --gaisio-primary: #3498db;
+    --gaisio-secondary: #2c3e50;
+    --gaisio-success: #27ae60;
+    --gaisio-danger: #e74c3c;
+    --gaisio-warning: #f39c12;
+    --gaisio-light: #ecf0f1;
+    --gaisio-dark: #2c3e50;
+    --gaisio-gradient: linear-gradient(135deg, #3498db, #2980b9);
+    --gaisio-gradient-dark: linear-gradient(135deg, #2c3e50, #34495e);
+    --gaisio-page-bg: #C4B4FF;
+}
+
+/* Background global pour toutes les pages */
+body {
+    background-color: var(--gaisio-page-bg) !important;
+    background: var(--gaisio-page-bg) !important;
+}
+
+/* Style général */
+.gaisio-login-form,
+.gaisio-register-form,
+.gaisio-user-dashboard,
+.gaisio-earthquake-form,
+.gaisio-earthquake-table {
+    max-width: 900px;
+    margin: 1rem auto;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(196, 180, 255, 0.2);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border: 1px solid rgba(196, 180, 255, 0.3);
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+}
+
+/* Espacement entre les sections */
+.gaisio-login-form + .gaisio-register-form,
+.gaisio-register-form + .gaisio-user-dashboard,
+.gaisio-user-dashboard + .gaisio-earthquake-form,
+.gaisio-earthquake-form + .gaisio-earthquake-table {
+    margin-top: 2rem;
+}
+
+.gaisio-login-form h2,
+.gaisio-register-form h2,
+.gaisio-user-dashboard h2,
+.gaisio-earthquake-form h2,
+.gaisio-earthquake-table h2 {
+    color: #5a4f8a;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: 700;
+    position: relative;
+    padding-bottom: 0.75rem;
+    text-shadow: 0 2px 4px rgba(196, 180, 255, 0.3);
+}
+
+.gaisio-login-form h2::after,
+.gaisio-register-form h2::after,
+.gaisio-user-dashboard h2::after,
+.gaisio-earthquake-form h2::after,
+.gaisio-earthquake-table h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, #8b7fd1, #a394e8);
+    border-radius: 2px;
+    box-shadow: 0 2px 8px rgba(139, 127, 209, 0.4);
+}
+
+.form-group {
+    margin-bottom: 20px; /* Réduit de 30px à 20px */
+    position: relative;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: #5a4f8a;
+    font-size: 0.95rem;
+    text-transform: none;
+    letter-spacing: 0.2px;
+    text-shadow: 0 1px 2px rgba(196, 180, 255, 0.2);
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 2px solid rgba(196, 180, 255, 0.3);
+    border-radius: 12px;
+    font-size: 0.95rem;
+    background: rgba(255, 255, 255, 0.9);
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+    background: #ffffff;
+    color: var(--gaisio-dark);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--gaisio-primary);
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+    background: #ffffff;
+    transform: translateY(-1px);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+}
+
+.form-group input.error,
+.form-group textarea.error {
+    border-color: var(--gaisio-danger);
+    box-shadow: 0 0 0 4px rgba(231, 76, 60, 0.15);
+    background: #fff5f5;
+}
+
+/* Styles pour le texte d'aide */
+.form-help {
+    display: block;
+    margin-top: 0.5rem;
+    font-size: 0.85rem;
+    color: #6c757d;
+    font-style: italic;
+    line-height: 1.4;
+}
+
+/* Styles pour le bouton de traduction */
+.language-switcher {
+    position: fixed;
+    top: 120px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.language-btn {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 25px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.language-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+    background: linear-gradient(135deg, #5a6fd8 0%, #6a4190 100%);
+}
+
+.language-btn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Responsive pour le bouton de traduction */
+@media (max-width: 768px) {
+    .language-switcher {
+        top: 100px;
+        right: 15px;
+    }
+    
+    .language-btn {
+        padding: 10px 16px;
+        font-size: 12px;
+    }
+}
+
+/* Boutons principaux */
+.gaisio-btn {
+    background: linear-gradient(135deg, #8b7fd1, #a394e8);
+    color: white;
+    padding: 0.75rem 2rem;
+    border: none;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    margin-top: 1rem;
+    text-transform: none;
+    letter-spacing: 0.5px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(139, 127, 209, 0.3);
+}
+
+.gaisio-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.5s;
+}
+
+.gaisio-btn:hover::before {
+    left: 100%;
+}
+
+.gaisio-btn:hover {
+    background: linear-gradient(135deg, #7a6bc4, #8f7fd8);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(139, 127, 209, 0.4);
+}
+
+.gaisio-btn:active {
+    transform: translateY(0);
+}
+
+/* Boutons secondaires */
+.gaisio-btn-secondary {
+    background: var(--gaisio-gradient-dark);
+    color: white;
+    padding: 0.75rem 2rem;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.gaisio-btn-secondary:hover {
+    background: linear-gradient(135deg, #34495e, #2c3e50);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(44, 62, 80, 0.3);
+    color: white;
+    text-decoration: none;
+}
+
+/* Boutons de connexion/déconnexion */
+.gaisio-auth-buttons {
+    display: flex;
+    gap: 1rem;
+    margin: 2rem 0;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.gaisio-btn-login {
+    background: var(--gaisio-success);
+    color: white;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.gaisio-btn-login:hover {
+    background: #229954;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(39, 174, 96, 0.3);
+    color: white;
+    text-decoration: none;
+}
+
+.gaisio-btn-logout {
+    background: var(--gaisio-danger);
+    color: white;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.gaisio-btn-logout:hover {
+    background: #c0392b;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(231, 76, 60, 0.3);
+    color: white;
+    text-decoration: none;
+}
+
+/* Messages */
+#gaisio-user-message,
+#gaisio-earthquake-message {
+    margin-top: 1.5rem;
+    padding: 1rem 1.5rem;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 1rem;
+    text-align: center;
+    border-left: 4px solid;
+}
+
+#gaisio-user-message .success,
+#gaisio-earthquake-message .success {
+    background: linear-gradient(135deg, #d4edda, #c3e6cb);
+    color: #155724;
+    border-left-color: var(--gaisio-success);
+    box-shadow: 0 4px 15px rgba(39, 174, 96, 0.2);
+}
+
+#gaisio-user-message .error,
+#gaisio-earthquake-message .error {
+    background: linear-gradient(135deg, #f8d7da, #f5c6cb);
+    color: #721c24;
+    border-left-color: var(--gaisio-danger);
+    box-shadow: 0 4px 15px rgba(231, 76, 60, 0.2);
+}
+
+/* Tableau des tremblements de terre */
+.gaisio-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e1e8ed;
+    max-height: 400px;
+    display: flex;
+    flex-direction: column;
+    font-size: 0.85rem;
+}
+
+.gaisio-table thead {
+    background: linear-gradient(135deg, #4a90e2, #357abd);
+    color: white;
+    flex-shrink: 0;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.gaisio-table th {
+    padding: 0.5rem 0.6rem;
+    text-align: left;
+    font-weight: 600;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    position: relative;
+    height: 2.2rem;
+    vertical-align: middle;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    box-sizing: border-box;
+}
+
+.gaisio-table th:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.gaisio-table th::after {
+    content: ' ↕';
+    font-size: 0.6rem;
+    opacity: 0.7;
+    margin-left: 0.2rem;
+}
+
+
+
+.gaisio-table td {
+    padding: 0.4rem 0.6rem;
+    text-align: left;
+    border-bottom: 1px solid #f0f0f0;
+    font-size: 0.8rem;
+    height: 2rem;
+    vertical-align: middle;
+    box-sizing: border-box;
+    color: #333;
+}
+
+/* Largeurs spécifiques pour chaque colonne */
+.gaisio-table th:nth-child(1),
+.gaisio-table td:nth-child(1) {
+    width: 18%;
+    min-width: 140px;
+}
+
+.gaisio-table th:nth-child(2),
+.gaisio-table td:nth-child(2) {
+    width: 12%;
+    min-width: 100px;
+}
+
+.gaisio-table th:nth-child(3),
+.gaisio-table td:nth-child(3) {
+    width: 12%;
+    min-width: 100px;
+}
+
+.gaisio-table th:nth-child(4),
+.gaisio-table td:nth-child(4) {
+    width: 10%;
+    min-width: 80px;
+}
+
+.gaisio-table th:nth-child(5),
+.gaisio-table td:nth-child(5) {
+    width: 10%;
+    min-width: 80px;
+}
+
+.gaisio-table th:nth-child(6),
+.gaisio-table td:nth-child(6) {
+    width: 20%;
+    min-width: 120px;
+}
+
+.gaisio-table th:nth-child(7),
+.gaisio-table td:nth-child(7) {
+    width: 18%;
+    min-width: 120px;
+}
+
+.gaisio-table tbody tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+.gaisio-table tbody tr:nth-child(odd) {
+    background-color: white;
+}
+
+.gaisio-table tbody tr {
+    transition: all 0.2s ease;
+}
+
+.gaisio-table tbody tr:hover {
+    background: linear-gradient(135deg, #e3f2fd, #bbdefb) !important;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(74, 144, 226, 0.15);
+}
+
+/* Styles pour les données spécifiques */
+.gaisio-table td:nth-child(2),
+.gaisio-table td:nth-child(3) {
+    font-family: 'Courier New', monospace;
+    font-weight: 500;
+    color: #2c3e50;
+}
+
+.gaisio-table td:nth-child(4) {
+    font-weight: 600;
+    color: #e74c3c;
+}
+
+.gaisio-table td:nth-child(5) {
+    font-weight: 600;
+    color: #f39c12;
+}
+
+.gaisio-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* Animation pour les nouvelles lignes */
+.gaisio-table tbody tr {
+    animation: fadeInUp 0.5s ease-out;
+}
+
+/* Styles pour les colonnes de localisation */
+.location-commune,
+.location-province {
+    font-weight: 500;
+    color: #1d78df;
+    min-width: 120px;
+    max-width: 150px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 0.8rem;
+}
+
+.location-commune:empty::before,
+.location-province:empty::before {
+    content: "Chargement...";
+    color: #999;
+    font-style: italic;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .gaisio-login-form,
+    .gaisio-register-form,
+    .gaisio-user-dashboard,
+    .gaisio-earthquake-form,
+    .gaisio-earthquake-table {
+        margin: 0.5rem;
+        padding: 1rem;
+    }
+    
+    .gaisio-login-form h2,
+    .gaisio-register-form h2,
+    .gaisio-user-dashboard h2,
+    .gaisio-earthquake-form h2,
+    .gaisio-earthquake-table h2 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+    
+    .form-group {
+        margin-bottom: 1rem;
+    }
+    
+    .form-group input,
+    .form-group textarea {
+        padding: 0.5rem 0.75rem;
+        font-size: 0.9rem;
+    }
+    
+    .gaisio-btn {
+        padding: 0.5rem 1.5rem;
+        font-size: 0.9rem;
+    }
+    
+    .gaisio-table {
+        font-size: 0.7rem;
+        max-height: 350px;
+    }
+    
+    .gaisio-table th,
+    .gaisio-table td {
+        padding: 0.4rem 0.3rem;
+        height: 2rem;
+        box-sizing: border-box;
+    }
+    
+    /* Ajuster les largeurs sur mobile */
+    .gaisio-table th:nth-child(1),
+    .gaisio-table td:nth-child(1) {
+        width: 20%;
+        min-width: 120px;
+    }
+    
+    .gaisio-table th:nth-child(2),
+    .gaisio-table td:nth-child(2) {
+        width: 15%;
+        min-width: 80px;
+    }
+    
+    .gaisio-table th:nth-child(3),
+    .gaisio-table td:nth-child(3) {
+        width: 15%;
+        min-width: 80px;
+    }
+    
+    .gaisio-table th:nth-child(4),
+    .gaisio-table td:nth-child(4) {
+        width: 12%;
+        min-width: 60px;
+    }
+    
+    .gaisio-table th:nth-child(5),
+    .gaisio-table td:nth-child(5) {
+        width: 12%;
+        min-width: 60px;
+    }
+    
+    .gaisio-table th:nth-child(6),
+    .gaisio-table td:nth-child(6) {
+        width: 13%;
+        min-width: 80px;
+    }
+    
+    .gaisio-table th:nth-child(7),
+    .gaisio-table td:nth-child(7) {
+        width: 13%;
+        min-width: 80px;
+    }
+    
+    .gaisio-table tbody {
+        max-height: 350px;
+    }
+    
+    /* Masquer certaines colonnes sur mobile */
+    .gaisio-table th:nth-child(6),
+    .gaisio-table td:nth-child(6),
+    .gaisio-table th:nth-child(7),
+    .gaisio-table td:nth-child(7) {
+        display: none;
+    }
+    
+    /* Ajuster les boutons d'authentification */
+    .gaisio-auth-buttons {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .gaisio-btn-login,
+    .gaisio-btn-logout,
+    .gaisio-btn-secondary {
+        padding: 0.5rem 1rem;
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .gaisio-login-form,
+    .gaisio-register-form,
+    .gaisio-user-dashboard,
+    .gaisio-earthquake-form,
+    .gaisio-earthquake-table {
+        margin: 0.25rem;
+        padding: 0.75rem;
+    }
+    
+    .gaisio-table th:nth-child(4),
+    .gaisio-table td:nth-child(4),
+    .gaisio-table th:nth-child(6),
+    .gaisio-table td:nth-child(6),
+    .gaisio-table th:nth-child(7),
+    .gaisio-table td:nth-child(7) {
+        display: none;
+    }
+    
+    .gaisio-dashboard-header {
+        padding: 1rem;
+    }
+    
+    .gaisio-user-info {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+}
+
+/* Animation de chargement */
+.loading {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid #f3f3f3;
+    border-top: 3px solid #3498db;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Styles pour les champs de coordonnées */
+.form-group input[type="number"] {
+    font-family: 'Courier New', monospace;
+    font-size: 0.9rem;
+}
+
+/* Indicateurs visuels pour les champs requis */
+.form-group label::after {
+    content: " *";
+    color: #e74c3c;
+}
+
+.form-group label[for="magnitude"]::after,
+.form-group label[for="description"]::after,
+.form-group label[for="login_username"]::after,
+.form-group label[for="login_password"]::after,
+.form-group label[for="register_username"]::after,
+.form-group label[for="register_email"]::after,
+.form-group label[for="register_password"]::after,
+.form-group label[for="register_confirm_password"]::after {
+    content: "";
+}
+
+/* Styles pour les nouveaux formulaires */
+.form-description {
+    text-align: center;
+    color: #666;
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+.gaisio-form-footer {
+    text-align: center;
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #e1e8ed;
+}
+
+.gaisio-link {
+    color: var(--gaisio-primary);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.gaisio-link:hover {
+    color: var(--gaisio-secondary);
+    text-decoration: underline;
+}
+
+/* Checkbox personnalisée */
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-weight: 500;
+    color: var(--gaisio-dark);
+}
+
+.checkbox-label input[type="checkbox"] {
+    margin-right: 0.5rem;
+    transform: scale(1.2);
+}
+
+/* Tableau de bord utilisateur */
+.gaisio-user-dashboard {
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    border: 2px solid #e3f2fd;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    animation: fadeInUp 0.6s ease-out;
+}
+
+.gaisio-dashboard-header {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding: 2.5rem;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 16px;
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+    color: white;
+    position: relative;
+    overflow: hidden;
+    animation: slideInDown 0.8s ease-out;
+}
+
+.gaisio-dashboard-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="white" opacity="0.1"/><circle cx="75" cy="75" r="1" fill="white" opacity="0.1"/><circle cx="50" cy="10" r="0.5" fill="white" opacity="0.1"/><circle cx="10" cy="60" r="0.5" fill="white" opacity="0.1"/><circle cx="90" cy="40" r="0.5" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+    opacity: 0.3;
+}
+
+.gaisio-dashboard-header h2 {
+    color: white !important;
+    margin-bottom: 1rem !important;
+    font-size: 2.2rem !important;
+    font-weight: 700 !important;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    position: relative;
+    z-index: 2;
+}
+
+.gaisio-dashboard-header h2::after {
+    display: none !important;
+}
+
+.gaisio-user-info {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 2;
+    animation: fadeIn 1s ease-out 0.3s both;
+}
+
+.user-email,
+.user-role {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    padding: 0.75rem 1.5rem;
+    border-radius: 25px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    min-width: 120px;
+    text-align: center;
+}
+
+.user-email:hover,
+.user-role:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.gaisio-dashboard-actions {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin: 2.5rem 0;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 2;
+    animation: fadeIn 1s ease-out 0.5s both;
+}
+
+.gaisio-dashboard-actions .gaisio-btn-logout,
+.gaisio-dashboard-actions .gaisio-btn-secondary {
+    padding: 1rem 2.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    max-width: 280px;
+}
+
+.gaisio-dashboard-actions .gaisio-btn-logout::before,
+.gaisio-dashboard-actions .gaisio-btn-secondary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.5s;
+}
+
+.gaisio-dashboard-actions .gaisio-btn-logout:hover::before,
+.gaisio-dashboard-actions .gaisio-btn-secondary:hover::before {
+    left: 100%;
+}
+
+.gaisio-dashboard-actions .gaisio-btn-logout:hover,
+.gaisio-dashboard-actions .gaisio-btn-secondary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.gaisio-dashboard-content {
+    background: white;
+    border-radius: 16px;
+    padding: 2.5rem;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e3f2fd;
+    position: relative;
+    overflow: hidden;
+    animation: fadeIn 1s ease-out 0.7s both;
+}
+
+.gaisio-dashboard-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #667eea, #764ba2, #667eea);
+    background-size: 200% 100%;
+    animation: gradient-shift 3s ease-in-out infinite;
+}
+
+@keyframes gradient-shift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+.gaisio-dashboard-section h3 {
+    color: var(--gaisio-dark);
+    margin-bottom: 2rem;
+    font-size: 1.6rem;
+    font-weight: 700;
+    text-align: center;
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+.gaisio-dashboard-section h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, #667eea, #764ba2);
+    border-radius: 2px;
+}
+
+/* Messages d'état */
+.gaisio-already-logged,
+.gaisio-login-required {
+    text-align: center;
+    padding: 3rem 2rem;
+    border-radius: 20px;
+    margin: 2rem 0;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    border: 2px solid transparent;
+    background-clip: padding-box;
+}
+
+.gaisio-already-logged::before,
+.gaisio-login-required::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 20px;
+    padding: 2px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+}
+
+.gaisio-already-logged {
+    background: linear-gradient(135deg, #d4edda, #c3e6cb);
+}
+
+.gaisio-login-required {
+    background: linear-gradient(135deg, #fff3cd, #ffeaa7);
+}
+
+.gaisio-already-logged h3,
+.gaisio-login-required h3 {
+    color: #155724;
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+    font-weight: 700;
+    position: relative;
+    z-index: 2;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.gaisio-login-required h3 {
+    color: #856404;
+}
+
+.gaisio-already-logged p,
+.gaisio-login-required p {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    position: relative;
+    z-index: 2;
+    opacity: 0.9;
+}
+
+/* Boutons d'authentification améliorés */
+.gaisio-auth-buttons {
+    display: flex;
+    gap: 1.5rem;
+    margin: 2.5rem 0;
+    justify-content: center;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 2;
+}
+
+.gaisio-auth-buttons .gaisio-btn-login,
+.gaisio-auth-buttons .gaisio-btn-logout,
+.gaisio-auth-buttons .gaisio-btn-secondary {
+    padding: 1rem 2.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+    min-width: 160px;
+}
+
+.gaisio-auth-buttons .gaisio-btn-login::before,
+.gaisio-auth-buttons .gaisio-btn-logout::before,
+.gaisio-auth-buttons .gaisio-btn-secondary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.5s;
+}
+
+.gaisio-auth-buttons .gaisio-btn-login:hover::before,
+.gaisio-auth-buttons .gaisio-btn-logout:hover::before,
+.gaisio-auth-buttons .gaisio-btn-secondary:hover::before {
+    left: 100%;
+}
+
+.gaisio-auth-buttons .gaisio-btn-login:hover,
+.gaisio-auth-buttons .gaisio-btn-logout:hover,
+.gaisio-auth-buttons .gaisio-btn-secondary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Styles pour la carte */
+.gaisio-earthquake-map {
+    margin-bottom: 2rem;
+}
+
+.gaisio-map-controls {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+    flex-wrap: wrap;
+}
+
+.gaisio-map-controls button {
+    background: var(--gaisio-light);
+    color: var(--gaisio-dark);
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.gaisio-map-controls button:hover {
+    background: var(--gaisio-primary);
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* Styles pour les messages d'état */
+.status-message {
+    padding: 1rem;
+    margin: 1rem 0;
+    border-radius: 6px;
+    font-weight: 500;
+}
+
+.status-message.info {
+    background-color: #d1ecf1;
+    color: #0c5460;
+    border: 1px solid #bee5eb;
+}
+
+.status-message.warning {
+    background-color: #fff3cd;
+    color: #856404;
+    border: 1px solid #ffeaa7;
+} 
+
+/* Styles pour la légende de la carte */
+.gaisio-map-legend {
+    background: white;
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin: 0.5 0;
+    border: 1px solid #e1e8ed;
+}
+
+.gaisio-map-legend h4 {
+    margin: 0 0 0.75rem 0;
+    color: #2c3e50;
+    font-size: 1rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+.legend-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+    color: #555;
+}
+
+.legend-symbol {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: inline-block;
+    border: 3px solid transparent;
+    margin-right: 6px;
+}
+
+.legend-latest {
+    background-color: #ff0000; /* rouge vif */
+    border-color: #ff0000;
+    animation: pulse-legend 1.2s infinite;
+}
+
+@keyframes pulse-legend {
+    0% {
+        box-shadow: 0 0 0 0 rgba(255,0,0,0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 12px rgba(255,0,0,0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(255,0,0,0);
+    }
+}
+.legend-last24 {
+    background-color: #e74c3c; /* rouge */
+    border-color: #e74c3c;
+}
+.legend-2-7 {
+    background-color: #ff9900; /* orange */
+    border-color: #ff9900;
+}
+.legend-8-30 {
+    background-color: #ffd700; /* orange clair */
+    border-color: #ffd700;
+}
+.legend-felt.legend-circle {
+    background-color: #fff;
+    border: 2px solid #000;
+}
+
+/* Styles pour l'affichage de la magnitude */
+.magnitude-display {
+    display: inline-block;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    text-align: center;
+    min-width: 40px;
+    color: gray;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.magnitude-low {
+    background: linear-gradient(135deg, #27ae60, #2ecc71);
+    border: 1px solid #27ae60;
+}
+
+.magnitude-medium {
+    background: linear-gradient(135deg, #f39c14, #e67e22);
+    border: 1px solid #f39c12;
+}
+
+.magnitude-high {
+    background: linear-gradient(135deg, #e74c3c, #c0392b);
+    border: 1px solid #e74c3c;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 2px 4px rgba(231, 76, 60, 0.3);
+    }
+    50% {
+        box-shadow: 0 2px 8px rgba(231, 76, 60, 0.6);
+    }
+    100% {
+        box-shadow: 0 2px 4px rgba(231, 76, 60, 0.3);
+    }
+}
+
+/* Amélioration de l'affichage du tableau pour la magnitude */
+.gaisio-table td:nth-child(5) {
+    text-align: center;
+    font-weight: 500;
+}
+
+/* Styles pour le footer */
+.gaisio-footer {
+    background: linear-gradient(135deg, #2c3e50, #34495e);
+    color: #ecf0f1;
+    padding: 20px 0;
+    margin-top: 40px;
+    border-top: 1px solid #34495e;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.gaisio-footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.gaisio-footer p {
+    margin: 0;
+    font-size: 0.9rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #bdc3c7;
+}
+
+.gaisio-footer p strong {
+    color: #ecf0f1;
+    font-weight: 600;
+}
+
+/* Responsive design pour le footer */
+@media (max-width: 768px) {
+    .gaisio-footer {
+        padding: 15px 0;
+        margin-top: 30px;
+    }
+    
+    .gaisio-footer-content {
+        padding: 0 15px;
+    }
+    
+    .gaisio-footer p {
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .gaisio-footer {
+        padding: 12px 0;
+        margin-top: 25px;
+    }
+    
+    .gaisio-footer p {
+        font-size: 0.8rem;
+    }
+}
+
+/* Styles pour le message de succès avec magnitude */
+.success-message {
+    background: #d4edda;
+    border: 1px solid #c3e6cb;
+    border-radius: 8px;
+    padding: 15px;
+    margin: 10px 0;
+}
+
+.success-message .success {
+    margin: 0 0 10px 0;
+    color: #155724;
+    font-weight: 500;
+}
+
+.magnitude-result {
+    background: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 6px;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+.magnitude-result strong {
+    color: #495057;
+    font-size: 0.9rem;
+}
+
+.magnitude-result .magnitude-display {
+    margin-left: 8px;
+    font-size: 1.1rem;
+    padding: 6px 12px;
+} 
+
+.gaisio-marker-latest .pulse-marker {
+    width: 8px;
+    height: 8px;
+    display: block;
+    border-radius: 50%;
+    background: #ff0000;
+    border: 3px solid #ff0000;
+    position: relative;
+    box-shadow: 0 0 0 0 rgba(255,0,0,0.7);
+    animation: pulse-legend 1.5s infinite;
+} 
+
+/* --- Style "carte WordPress" pour le carrousel des actualités --- */
+.gaisio-news-carousel {
+    margin-top: 4rem;
+    margin-bottom: 3rem;
+    position: relative;
+    background: none;
+    box-shadow: none;
+    border-radius: 0;
+}
+
+.carousel-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: none;
+    box-shadow: none;
+    border-radius: 0;
+    overflow: hidden;
+}
+
+.carousel-slides {
+    position: relative;
+    height: 370px;
+    background: none;
+    border-radius: 0;
+    overflow-x: auto;
+    overflow-y: hidden;
+    display: flex;
+    gap: 1.5rem;
+    padding: 0 1rem;
+    scroll-behavior: smooth;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+}
+
+.carousel-slides::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+}
+
+.carousel-slide {
+    position: relative;
+    width: calc(33.333% - 1rem);
+    height: 100%;
+    opacity: 1;
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    z-index: 1;
+    box-shadow: 0 4px 24px rgba(30, 60, 90, 0.10);
+    border-radius: 18px;
+    background: #fff;
+    overflow: hidden;
+    border: 1px solid #e1e8ed;
+    transform: scale(0.95);
+    flex-shrink: 0;
+}
+
+/* Effet de pause au survol */
+.carousel-container.paused .carousel-slide {
+    transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+}
+
+.carousel-container.paused .carousel-slide:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 32px rgba(30, 60, 90, 0.20);
+}
+
+.carousel-slide.active {
+    z-index: 2;
+    transform: scale(1);
+    box-shadow: 0 8px 32px rgba(30, 60, 90, 0.13);
+}
+
+.slide-image {
+    width: 100%;
+    height: 180px;
+    overflow: hidden;
+    border-radius: 18px 18px 0 0;
+    flex-shrink: 0;
+}
+
+.slide-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.carousel-container.paused .slide-image img {
+    transition: transform 0.3s ease-out;
+}
+
+.carousel-slide.active .slide-image img {
+    transform: scale(1.04);
+}
+
+.carousel-slide:not(.active) .slide-image img {
+    filter: grayscale(20%) brightness(0.95);
+    opacity: 0.7;
+}
+
+.slide-content {
+    padding: 1.2rem 1.5rem 1.2rem 1.5rem;
+    background: none;
+    color: #222;
+    position: static;
+    box-shadow: none;
+    border-radius: 0 0 18px 18px;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-weight: 400;
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.slide-content h3 {
+    font-size: 1.15rem;
+    margin: 0 0 0.5rem 0;
+    font-weight: 600;
+    color: #1d3557;
+    letter-spacing: 0.2px;
+}
+
+.slide-content p {
+    font-size: 1rem;
+    margin: 0;
+    color: #444;
+    font-weight: 400;
+}
+
+/* Boutons de navigation style WordPress */
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #f1f3f6;
+    border: 1px solid #cfd8dc;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #357abd;
+    cursor: pointer;
+    z-index: 3;
+    transition: background 0.2s, box-shadow 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 8px rgba(30,60,90,0.07);
+}
+.carousel-btn:hover {
+    background: #e3eaf3;
+    color: #174a7c;
+    box-shadow: 0 4px 16px rgba(30,60,90,0.13);
+}
+.carousel-prev { left: -20px; }
+.carousel-next { right: -20px; }
+
+/* Indicateurs sobres */
+.carousel-indicators {
+    position: absolute;
+    bottom: 18px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+    z-index: 3;
+}
+.indicator {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #e1e8ed;
+    border: 1.5px solid #b3c6d6;
+    cursor: pointer;
+    transition: background 0.2s, border 0.2s, transform 0.2s;
+}
+.indicator.active {
+    background: #357abd;
+    border-color: #357abd;
+    transform: scale(1.18);
+}
+.indicator:hover {
+    background: #b3c6d6;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .carousel-container { max-width: 98vw; }
+    .carousel-slides { 
+        height: 220px; 
+        gap: 1rem;
+        padding: 0 0.5rem;
+    }
+    .carousel-slide { 
+        width: calc(50% - 0.5rem); 
+    }
+    .slide-image { height: 100px; }
+    .slide-content { padding: 0.7rem 1rem; }
+    .slide-content h3 { font-size: 1rem; }
+    .slide-content p { font-size: 0.92rem; }
+    .carousel-btn { width: 32px; height: 32px; font-size: 1.1rem; }
+    .carousel-prev { left: -10px; }
+    .carousel-next { right: -10px; }
+}
+
+@media (max-width: 600px) {
+    .carousel-slides { 
+        height: 140px; 
+        gap: 0.5rem;
+        padding: 0 0.25rem;
+    }
+    .carousel-slide { 
+        width: calc(100% - 0.25rem); 
+    }
+    .slide-image { height: 60px; }
+    .slide-content { padding: 0.4rem 0.5rem; }
+    .slide-content h3 { font-size: 0.85rem; }
+    .slide-content p { font-size: 0.75rem; }
+}
+ 
+
+/* Styles pour les filtres du tableau */
+.gaisio-table-filters {
+    background: #f8f9fa;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    border: 1px solid #e1e8ed;
+}
+
+.filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.filter-group label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #2c3e50;
+    margin: 0;
+}
+
+.search-container {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.filter-input {
+    flex: 1;
+    padding: 0.6rem 0.8rem;
+    border: 1px solid #cfd8dc;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    background: white;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.filter-input:focus {
+    outline: none;
+    border-color: #4a90e2;
+    box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.2);
+}
+
+.filter-input::placeholder {
+    color: #95a5a6;
+    font-style: italic;
+}
+
+/* Styles spécifiques pour le bouton Effacer */
+#clear-filters,
+button#clear-filters,
+.gaisio-btn-secondary#clear-filters {
+    padding: 0.6rem 1rem !important;
+    font-size: 0.8rem !important;
+    white-space: nowrap !important;
+    background: #e74c3c !important;
+    color: white !important;
+    border: none !important;
+    border-radius: 6px !important;
+    font-weight: 500 !important;
+    transition: all 0.3s ease !important;
+    cursor: pointer !important;
+    text-decoration: none !important;
+    display: inline-block !important;
+    text-transform: none !important;
+    letter-spacing: normal !important;
+}
+
+#clear-filters:hover,
+button#clear-filters:hover,
+.gaisio-btn-secondary#clear-filters:hover {
+    background: #c0392b !important;
+    transform: translateY(-1px) !important;
+    box-shadow: 0 4px 12px rgba(231, 76, 60, 0.3) !important;
+    color: white !important;
+    text-decoration: none !important;
+}
+
+.no-results {
+    text-align: center;
+    padding: 2rem;
+    color: #7f8c8d;
+    font-style: italic;
+    background: #f8f9fa;
+    border-radius: 8px;
+    margin-top: 1rem;
+}
+
+/* Responsive pour les filtres */
+@media (max-width: 768px) {
+    .filter-row {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .filter-group {
+        min-width: auto;
+    }
+    
+    #clear-filters {
+        margin-top: 0.5rem;
+    }
+}
+
+/* Styles pour le carrousel de ressources */
+.gaisio-resources-carousel {
+    margin: 2rem 0;
+}
+
+.resources-container {
+    position: relative;
+    overflow: hidden;
+    padding: 2rem 0;
+}
+
+.resources-slides {
+    display: flex;
+    gap: 2rem;
+    transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    padding: 0 1rem;
+}
+
+/* Cartes de ressources */
+.resource-card {
+    min-width: 300px;
+    height: 400px;
+    perspective: 1000px;
+    cursor: pointer;
+}
+
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.resource-card:hover .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+}
+
+.card-front {
+    background: white;
+}
+
+.card-front img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card-back {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    transform: rotateY(180deg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    text-align: center;
+}
+
+.card-back h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: white;
+}
+
+.card-back .author {
+    font-size: 1rem;
+    color: #ecf0f1;
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+
+.card-back .description {
+    font-size: 0.9rem;
+    color: #bdc3c7;
+    line-height: 1.5;
+}
+
+/* Animation du carrousel */
+@keyframes slideResources {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-33%); }
+}
+
+.resources-slides {
+    animation: slideResources 25s linear infinite;
+    /* Largeur doublée pour accommoder la duplication */
+    width: 200%;
+}
+
+.resources-slides:hover {
+    animation-play-state: paused;
+}
+
+/* Effet de boucle continue */
+.resources-slides::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+/* Responsive pour les ressources */
+@media (max-width: 768px) {
+    .resource-card {
+        min-width: 250px;
+        height: 350px;
+    }
+    
+    .card-back h3 {
+        font-size: 1.1rem;
+    }
+    
+    .card-back .author {
+        font-size: 0.9rem;
+    }
+    
+    .card-back .description {
+        font-size: 0.8rem;
+    }
+} 
+
+/* Styles pour la section de signalement intégrée */
+.signalement-section {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 40px 0; /* Réduit de 100px à 40px */
+    margin: 30px 0; /* Réduit de 60px à 30px */
+    color: white;
+    border-radius: 25px; /* Réduit de 30px à 25px */
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 15px 50px rgba(102, 126, 234, 0.3); /* Réduit l'ombre */
+}
+
+.signalement-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="75" cy="75" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="50" cy="10" r="0.5" fill="rgba(255,255,255,0.05)"/><circle cx="10" cy="60" r="0.5" fill="rgba(255,255,255,0.05)"/><circle cx="90" cy="40" r="0.5" fill="rgba(255,255,255,0.05)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+    opacity: 0.3;
+    pointer-events: none;
+}
+
+/* Container du formulaire */
+.signalement-form-container {
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    margin-top: 30px; /* Réduit de 50px à 30px */
+    border-radius: 25px; /* Réduit de 30px à 25px */
+    padding: 35px; /* Réduit de 50px à 35px */
+    box-shadow: 0 20px 60px rgba(102, 126, 234, 0.15), 0 0 0 1px rgba(102, 126, 234, 0.1); /* Réduit l'ombre */
+    color: #333;
+    border: 1px solid rgba(102, 126, 234, 0.1);
+    backdrop-filter: blur(10px);
+    position: relative;
+    overflow: hidden;
+}
+
+.signalement-form-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #667eea, #764ba2, #667eea);
+    background-size: 200% 100%;
+    animation: gradientShift 3s ease-in-out infinite;
+}
+
+@keyframes gradientShift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+/* En-tête du formulaire */
+.form-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px; /* Réduit de 40px à 25px */
+    padding-bottom: 20px; /* Réduit de 30px à 20px */
+    border-bottom: 2px solid rgba(102, 126, 234, 0.1);
+    position: relative;
+}
+
+.form-header::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 60px;
+    height: 2px;
+    background: linear-gradient(90deg, #667eea, #764ba2);
+    border-radius: 1px;
+}
+
+.form-header h3 {
+    color: #667eea;
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin: 0;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: -0.02em;
+}
+
+.btn-close-form {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border: 2px solid rgba(102, 126, 234, 0.2);
+    color: #667eea;
+    padding: 10px 14px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    font-size: 1.3rem;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.1);
+}
+
+.btn-close-form:hover {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-color: #667eea;
+    color: white;
+    transform: scale(1.1) rotate(90deg);
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+}
+
+.signalement-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 40px; /* Réduit de 60px à 40px */
+    position: relative;
+    z-index: 2;
+    padding: 0 20px;
+}
+
+.signalement-text {
+    flex: 1;
+    min-width: 300px;
+}
+
+.signalement-text h2 {
+    font-size: 2.8rem; /* Réduit de 3.8rem à 2.8rem */
+    font-weight: 800;
+    margin-bottom: 15px; /* Réduit de 25px à 15px */
+    color: white;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+}
+
+.signalement-text p {
+    font-size: 1.2rem; /* Réduit de 1.5rem à 1.2rem */
+    line-height: 1.4; /* Réduit de 1.6 à 1.4 */
+    margin-bottom: 0;
+    color: rgba(255, 255, 255, 0.95);
+    font-weight: 400;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.signalement-button {
+    flex-shrink: 0;
+}
+
+.btn-signaler {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px; /* Réduit de 15px à 12px */
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    color: #667eea;
+    padding: 18px 35px; /* Réduit de 22px 45px à 18px 35px */
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-radius: 60px; /* Réduit de 70px à 60px */
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.1rem; /* Réduit de 1.3rem à 1.1rem */
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(255, 255, 255, 0.1);
+    position: relative;
+    overflow: hidden;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.btn-signaler::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.btn-signaler:hover::before {
+    left: 100%;
+}
+
+.btn-signaler:hover {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+    color: white;
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25), 0 0 0 2px rgba(255, 255, 255, 0.2);
+    text-decoration: none;
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+.btn-signaler:active {
+    transform: translateY(-1px) scale(0.98);
+}
+
+.btn-signaler i {
+    font-size: 1.6rem;
+    transition: transform 0.3s ease;
+}
+
+.btn-signaler:hover i {
+    transform: scale(1.1) rotate(5deg);
+}
+
+/* Styles pour le modal et le formulaire */
+.modal-content {
+    border-radius: 15px;
+    border: none;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.modal-header {
+    background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
+    color: white;
+    border-radius: 15px 15px 0 0;
+    border-bottom: none;
+}
+
+.modal-header .close {
+    color: white;
+    opacity: 0.8;
+    text-shadow: none;
+}
+
+.modal-header .close:hover {
+    opacity: 1;
+}
+
+.modal-title {
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+/* Styles pour le formulaire */
+.signalement-form {
+    padding: 25px 0;
+}
+
+.form-group {
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 12px;
+    font-weight: 700;
+    color: #2c3e50;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    position: relative;
+}
+
+.form-group label::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 30px;
+    height: 2px;
+    background: linear-gradient(90deg, #667eea, #764ba2);
+    border-radius: 1px;
+}
+
+.form-control {
+    width: 100%;
+    padding: 18px 22px;
+    border: 2px solid rgba(102, 126, 234, 0.2);
+    border-radius: 15px;
+    font-size: 1.1rem;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.05);
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.1), 0 8px 25px rgba(102, 126, 234, 0.15);
+    background: white;
+    transform: translateY(-2px);
+}
+
+.form-control:required {
+    border-left: 4px solid #667eea;
+}
+
+.form-control:required + label::before {
+    content: " *";
+    color: #e74c3c;
+    font-weight: 800;
+}
+
+textarea.form-control {
+    resize: vertical;
+    min-height: 100px;
+}
+
+/* Bouton de soumission */
+.form-actions {
+    margin-top: 35px; /* Réduit de 50px à 35px */
+    gap: 20px; /* Réduit de 25px à 20px */
+}
+
+.btn-signaler-submit {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 16px 40px; /* Réduit de 20px 50px à 16px 40px */
+    border: none;
+    border-radius: 55px; /* Réduit de 65px à 55px */
+    font-weight: 700;
+    font-size: 1.1rem; /* Réduit de 1.3rem à 1.1rem */
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+    position: relative;
+    overflow: hidden;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px; /* Réduit de 15px à 12px */
+    text-decoration: none;
+}
+
+.btn-signaler-submit::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.btn-signaler-submit:hover::before {
+    left: 100%;
+}
+
+.btn-signaler-submit:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 15px 40px rgba(102, 126, 234, 0.4);
+    background: linear-gradient(135deg, #5a6fd8 0%, #6a4190 100%);
+    color: white;
+}
+
+.btn-signaler-submit:active {
+    transform: translateY(-1px) scale(0.98);
+}
+
+.btn-signaler-submit i {
+    font-size: 1.3rem;
+    transition: transform 0.3s ease;
+}
+
+.btn-signaler-submit:hover i {
+    transform: scale(1.1) rotate(5deg);
+}
+
+/* Bouton d'annulation */
+.btn-cancel {
+    background: linear-gradient(135deg, #6c757d 0%, #5a6268 100%);
+    color: white;
+    padding: 16px 35px; /* Réduit de 20px 40px à 16px 35px */
+    border: none;
+    border-radius: 55px; /* Réduit de 65px à 55px */
+    font-weight: 600;
+    font-size: 1rem; /* Réduit de 1.1rem à 1rem */
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.btn-cancel:hover {
+    background: linear-gradient(135deg, #5a6268 0%, #495057 100%);
+    border-color: #495057;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(108, 117, 125, 0.4);
+    color: white;
+}
+
+.btn-cancel:active {
+    transform: translateY(0);
+}
+
+/* Responsive design pour la section de signalement */
+@media (max-width: 768px) {
+    .signalement-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+    
+    .signalement-text h2 {
+        font-size: 2rem;
+    }
+    
+    .signalement-text p {
+        font-size: 1.1rem;
+    }
+    
+    .btn-signaler {
+        padding: 12px 25px;
+        font-size: 1rem;
+    }
+    
+    .modal-dialog {
+        margin: 10px;
+    }
+}
+
+/* Animation d'entrée pour la section de signalement */
+.signalement-section {
+    animation: fadeInUp 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.signalement-content {
+    animation: slideInLeft 1.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.2s both;
+}
+
+.signalement-form-container {
+    animation: slideInUp 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Effet de pulsation pour le bouton */
+.btn-signaler {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(255, 255, 255, 0.1);
+    }
+    50% {
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15), 0 0 0 3px rgba(255, 255, 255, 0.3);
+    }
+    100% {
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(255, 255, 255, 0.1);
+    }
+}
+
+/* Message de succès */
+.signalement-success {
+    background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%);
+    color: #155724;
+    padding: 25px;
+    border-radius: 20px;
+    border: 2px solid #28a745;
+    margin-bottom: 30px;
+    text-align: center;
+    box-shadow: 0 8px 25px rgba(40, 167, 69, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.signalement-success::before {
+    content: '✓';
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 1.5rem;
+    color: #28a745;
+    font-weight: bold;
+}
+
+.signalement-error {
+    background: linear-gradient(135deg, #f8d7da 0%, #f5c6cb 100%);
+    color: #721c24;
+    padding: 25px;
+    border-radius: 20px;
+    border: 2px solid #dc3545;
+    margin-bottom: 30px;
+    text-align: center;
+    box-shadow: 0 8px 25px rgba(220, 53, 69, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.signalement-error::before {
+    content: '✗';
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 1.5rem;
+    color: #dc3545;
+    font-weight: bold;
+} 
+
+/* Indicateur de chargement */
+.btn-signaler-submit:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none !important;
+}
+
+.fa-spinner {
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Messages de signalement */
+#signalement-messages {
+    margin-bottom: 25px;
+}
+
+#signalement-messages .signalement-success,
+#signalement-messages .signalement-error {
+    animation: slideInDown 0.5s ease-out;
+}
+
+@keyframes slideInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+} 
+
+/* Styles responsifs pour la section de signalement */
+@media (max-width: 768px) {
+    .signalement-section {
+        padding: 25px 0; /* Encore plus compact sur mobile */
+        margin: 20px 0;
+        border-radius: 20px;
+    }
+    
+    .signalement-content {
+        gap: 25px; /* Réduit encore plus l'espacement sur mobile */
+        padding: 0 15px;
+    }
+    
+    .signalement-text h2 {
+        font-size: 2.2rem; /* Plus petit sur mobile */
+        margin-bottom: 12px;
+    }
+    
+    .signalement-text p {
+        font-size: 1rem; /* Plus petit sur mobile */
+        line-height: 1.3;
+    }
+    
+    .btn-signaler {
+        padding: 15px 30px; /* Plus compact sur mobile */
+        font-size: 1rem;
+        gap: 10px;
+    }
+    
+    .signalement-form-container {
+        margin-top: 20px;
+        padding: 25px; /* Plus compact sur mobile */
+        border-radius: 20px;
+    }
+    
+    .form-header {
+        margin-bottom: 20px;
+        padding-bottom: 15px;
+    }
+    
+    .form-header h3 {
+        font-size: 2rem; /* Plus petit sur mobile */
+    }
+    
+    .form-group {
+        margin-bottom: 15px; /* Plus compact sur mobile */
+    }
+    
+    .form-actions {
+        margin-top: 25px;
+        gap: 15px;
+    }
+    
+    .btn-signaler-submit,
+    .btn-cancel {
+        padding: 14px 30px; /* Plus compact sur mobile */
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .signalement-section {
+        padding: 20px 0; /* Très compact sur très petits écrans */
+        margin: 15px 0;
+    }
+    
+    .signalement-content {
+        gap: 20px;
+        padding: 0 10px;
+    }
+    
+    .signalement-text h2 {
+        font-size: 1.8rem; /* Très petit sur très petits écrans */
+        margin-bottom: 10px;
+    }
+    
+    .signalement-text p {
+        font-size: 0.9rem;
+        line-height: 1.2;
+    }
+    
+    .btn-signaler {
+        padding: 12px 25px;
+        font-size: 0.9rem;
+    }
+    
+    .signalement-form-container {
+        padding: 20px;
+        margin-top: 15px;
+    }
+    
+    .form-header h3 {
+        font-size: 1.6rem;
+    }
+    
+    .form-actions {
+        margin-top: 20px;
+        gap: 12px;
+    }
+} 
+
+/* ========================================
+   STYLES POUR LA PAGE D'ACCUEIL PUBLIQUE
+   ======================================== */
+
+/* Container principal de la page d'accueil */
+.gaisio-public-home {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    min-height: 100vh;
+}
+
+/* En-tête de la page d'accueil */
+.gaisio-public-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding: 3rem 2rem;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 20px;
+    color: white;
+    box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.gaisio-public-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="75" cy="75" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="50" cy="10" r="0.5" fill="rgba(255,255,255,0.1)"/><circle cx="10" cy="60" r="0.5" fill="rgba(255,255,255,0.1)"/><circle cx="90" cy="40" r="0.5" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+    opacity: 0.3;
+}
+
+.gaisio-public-header h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    position: relative;
+    z-index: 1;
+}
+
+.gaisio-public-header p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+    position: relative;
+    z-index: 1;
+}
+
+/* Statistiques de la page d'accueil */
+.gaisio-public-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+.stat-item {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    padding: 1.5rem;
+    border-radius: 15px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+}
+
+.stat-item:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.stat-number {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 0.5rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.9);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 500;
+}
+
+/* Contenu principal de la page */
+.gaisio-public-content {
+    margin-bottom: 4rem;
+}
+
+/* Sections de la page d'accueil */
+.gaisio-public-section {
+    background: white;
+    margin-bottom: 4rem;
+    padding: 3rem;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e9ecef;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.gaisio-public-section:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+}
+
+.gaisio-public-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #667eea, #764ba2, #f093fb);
+    background-size: 200% 100%;
+    animation: gradient-shift 3s ease-in-out infinite;
+}
+
+@keyframes gradient-shift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+.gaisio-public-section h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 1rem;
+    position: relative;
+    padding-bottom: 0.75rem;
+    text-align: center;
+}
+
+.gaisio-public-section h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, #667eea, #764ba2);
+    border-radius: 2px;
+}
+
+.gaisio-public-section p {
+    font-size: 1.1rem;
+    color: #6c757d;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+/* Actions de la page d'accueil */
+.gaisio-public-actions {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 3rem;
+    margin-top: 3rem;
+}
+
+.action-card {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+    border: 1px solid #dee2e6;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.action-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(102, 126, 234, 0.1), transparent);
+    transition: left 0.5s;
+}
+
+.action-card:hover::before {
+    left: 100%;
+}
+
+.action-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    border-color: #667eea;
+}
+
+.action-card h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 1rem;
+}
+
+.action-card p {
+    color: #6c757d;
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+}
+
+/* Boutons de la page d'accueil */
+.gaisio-public-section .gaisio-btn {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 1rem 2.5rem;
+    border: none;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.gaisio-public-section .gaisio-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.5s;
+}
+
+.gaisio-public-section .gaisio-btn:hover::before {
+    left: 100%;
+}
+
+.gaisio-public-section .gaisio-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+    background: linear-gradient(135deg, #5a6fd8 0%, #6a4190 100%);
+}
+
+/* Carrousel des ressources */
+.gaisio-resources-carousel {
+    margin-top: 2rem;
+}
+
+.resources-container {
+    position: relative;
+    overflow: hidden;
+    padding: 1rem 0;
+}
+
+.resources-slides {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    padding: 1rem;
+}
+
+.resource-card {
+    perspective: 1000px;
+    height: 300px;
+}
+
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+    cursor: pointer;
+}
+
+.resource-card:hover .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.card-front {
+    background: white;
+}
+
+.card-front img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.card-back {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    transform: rotateY(180deg);
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-back h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+.card-back .author {
+    font-size: 0.9rem;
+    opacity: 0.9;
+    margin-bottom: 0.5rem;
+}
+
+.card-back .description {
+    font-size: 0.8rem;
+    opacity: 0.8;
+    text-align: center;
+    line-height: 1.4;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .gaisio-public-home {
+        padding: 1rem 0.5rem;
+    }
+    
+    .gaisio-public-header {
+        padding: 2rem 1rem;
+        margin-bottom: 2rem;
+    }
+    
+    .gaisio-public-header h1 {
+        font-size: 2rem;
+    }
+    
+    .gaisio-public-header p {
+        font-size: 1rem;
+    }
+    
+    .gaisio-public-stats {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .stat-item {
+        padding: 1rem;
+    }
+    
+    .stat-number {
+        font-size: 2rem;
+    }
+    
+    .gaisio-public-section {
+        padding: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .gaisio-public-section h2 {
+        font-size: 1.5rem;
+    }
+    
+    .gaisio-public-actions {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .resources-slides {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 1rem;
+    }
+    
+    .resource-card {
+        height: 250px;
+    }
+}
+
+@media (max-width: 480px) {
+    .gaisio-public-header h1 {
+        font-size: 1.5rem;
+    }
+    
+    .gaisio-public-header p {
+        font-size: 0.9rem;
+    }
+    
+    .gaisio-public-section {
+        padding: 1rem;
+    }
+    
+    .gaisio-public-section h2 {
+        font-size: 1.3rem;
+    }
+    
+    .stat-number {
+        font-size: 1.5rem;
+    }
+    
+    .resources-slides {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Animation d'entrée pour les sections */
+.gaisio-public-section {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Animation pour les statistiques */
+.stat-item {
+    animation: fadeInScale 0.6s ease-out;
+    animation-fill-mode: both;
+}
+
+.stat-item:nth-child(1) { animation-delay: 0.1s; }
+.stat-item:nth-child(2) { animation-delay: 0.2s; }
+.stat-item:nth-child(3) { animation-delay: 0.3s; }
+
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Effet de survol amélioré pour les cartes de ressources */
+.resource-card {
+    transition: all 0.3s ease;
+}
+
+.resource-card:hover {
+    transform: scale(1.05);
+}
+
+/* Style pour le bouton de connexion centré */
+.gaisio-public-section .gaisio-btn {
+    margin: 0 auto;
+    display: block;
+    max-width: 300px;
+}
+
+/* Amélioration de la lisibilité */
+.gaisio-public-section p {
+    color: #495057;
+    font-size: 1rem;
+    line-height: 1.7;
+}
+
+/* Style pour les icônes dans les titres */
+.gaisio-public-section h2 {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* Effet de profondeur pour les sections */
+.gaisio-public-section {
+    position: relative;
+}
+
+.gaisio-public-section::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #dee2e6, transparent);
+}
+
+/* Centrage des éléments des sections principales */
+.gaisio-public-section .gaisio-earthquake-map,
+.gaisio-public-section .gaisio-earthquake-table,
+.gaisio-public-section .gaisio-news-carousel,
+.gaisio-public-section .gaisio-resources-carousel,
+.gaisio-public-section .signalement-section {
+    text-align: center;
+    margin: 0 auto;
+}
+
+/* Centrage des cartes d'action */
+.gaisio-public-actions {
+    text-align: center;
+}
+
+.action-card {
+    text-align: center;
+}
+
+.action-card h3,
+.action-card p {
+    text-align: center;
+}
+
+/* Centrage des carrousels */
+.carousel-container,
+.resources-container {
+    text-align: center;
+}
+
+/* Centrage des cartes de ressources */
+.resource-card {
+    text-align: center;
+}
+
+.card-back h3,
+.card-back .author,
+.card-back .description {
+    text-align: center;
+}
+
+/* Centrage des boutons de connexion */
+.gaisio-public-section .gaisio-btn {
+    margin: 0 auto;
+    display: block;
+    max-width: 300px;
+    text-align: center;
+}
+
+/* Centrage FORCÉ des éléments des sections principales */
+.gaisio-public-section .gaisio-earthquake-map,
+.gaisio-public-section .gaisio-earthquake-table,
+.gaisio-public-section .gaisio-news-carousel,
+.gaisio-public-section .gaisio-resources-carousel,
+.gaisio-public-section .signalement-section {
+    text-align: center !important;
+    margin: 0 auto !important;
+    display: block !important;
+}
+
+/* Centrage FORCÉ des cartes d'action */
+.gaisio-public-actions {
+    text-align: center !important;
+    display: block !important;
+}
+
+.action-card {
+    text-align: center !important;
+    display: block !important;
+}
+
+.action-card h3,
+.action-card p {
+    text-align: center !important;
+    display: block !important;
+}
+
+/* Centrage FORCÉ des carrousels */
+.carousel-container,
+.resources-container {
+    text-align: center !important;
+    display: block !important;
+}
+
+/* Centrage FORCÉ des cartes de ressources */
+.resource-card {
+    text-align: center !important;
+    display: block !important;
+}
+
+.card-back h3,
+.card-back .author,
+.card-back .description {
+    text-align: center !important;
+    display: block !important;
+}
+
+/* Centrage FORCÉ des boutons de connexion */
+.gaisio-public-section .gaisio-btn {
+    margin: 0 auto !important;
+    display: block !important;
+    max-width: 300px !important;
+    text-align: center !important;
+}
+
+/* Centrage FORCÉ des titres et descriptions */
+.gaisio-public-section h2 {
+    text-align: center !important;
+    display: block !important;
+}
+
+.gaisio-public-section p {
+    text-align: center !important;
+    display: block !important;
+}
+
+/* Centrage FORCÉ des soulignements */
+.gaisio-public-section h2::after {
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+}
+
+/* Styles pour le formulaire de connexion utilisateur */
+.gaisio-login-container {
+    max-width: 500px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.gaisio-login-form {
+    background: white;
+    border-radius: 20px;
+    padding: 2.5rem;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e9ecef;
+    position: relative;
+    overflow: hidden;
+}
+
+.gaisio-login-form::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #667eea, #764ba2);
+}
+
+.gaisio-login-form h2 {
+    color: #2c3e50;
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+    text-align: center;
+    font-weight: 600;
+}
+
+.login-description {
+    color: #6c757d;
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.gaisio-login-form .form-group {
+    margin-bottom: 1.5rem;
+}
+
+.gaisio-login-form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #2c3e50;
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+.gaisio-login-form input[type="text"],
+.gaisio-login-form input[type="password"] {
+    width: 100%;
+    padding: 1rem;
+    border: 2px solid #e9ecef;
+    border-radius: 12px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background: #f8f9fa;
+}
+
+.gaisio-login-form input[type="text"]:focus,
+.gaisio-login-form input[type="password"]:focus {
+    outline: none;
+    border-color: #667eea;
+    background: white;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.gaisio-login-form input::placeholder {
+    color: #adb5bd;
+}
+
+/* Checkbox personnalisée */
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 0.9rem;
+    color: #6c757d;
+    margin: 0;
+}
+
+.checkbox-label input[type="checkbox"] {
+    display: none;
+}
+
+.checkmark {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #e9ecef;
+    border-radius: 6px;
+    margin-right: 0.75rem;
+    position: relative;
+    transition: all 0.3s ease;
+    background: white;
+}
+
+.checkbox-label input[type="checkbox"]:checked + .checkmark {
+    background: #667eea;
+    border-color: #667eea;
+}
+
+.checkbox-label input[type="checkbox"]:checked + .checkmark::after {
+    content: '✓';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+/* Bouton de connexion */
+.login-btn {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1rem;
+    font-weight: 500;
+    border-radius: 12px;
+    margin-top: 1rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.login-btn .btn-text,
+.login-btn .btn-loading {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.login-btn .btn-loading .spinner {
+    width: 16px;
+    height: 16px;
+    border: 2px solid transparent;
+    border-top: 2px solid currentColor;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Aide et messages */
+.login-help {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background: #f8f9fa;
+    border-radius: 12px;
+    border-left: 4px solid #667eea;
+}
+
+.login-help p {
+    margin: 0.5rem 0;
+    color: #6c757d;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.login-help p:first-child {
+    margin-top: 0;
+}
+
+.login-help p:last-child {
+    margin-bottom: 0;
+}
+
+.login-help strong {
+    color: #2c3e50;
+}
+
+/* Messages de connexion */
+.login-message {
+    margin-top: 1.5rem;
+    padding: 1rem;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+.login-message.success {
+    background: #d4edda;
+    border: 1px solid #c3e6cb;
+    color: #155724;
+}
+
+.login-message.error {
+    background: #f8d7da;
+    border: 1px solid #f5c6cb;
+    color: #721c24;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .gaisio-login-container {
+        margin: 1rem auto;
+        padding: 0 0.5rem;
+    }
+    
+    .gaisio-login-form {
+        padding: 2rem 1.5rem;
+        border-radius: 15px;
+    }
+    
+    .gaisio-login-form h2 {
+        font-size: 1.6rem;
+    }
+    
+    .login-description {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .gaisio-login-form {
+        padding: 1.5rem 1rem;
+    }
+    
+    .gaisio-login-form h2 {
+        font-size: 1.4rem;
+    }
+    
+    .gaisio-login-form input[type="text"],
+    .gaisio-login-form input[type="password"] {
+        padding: 0.875rem;
+        font-size: 0.9rem;
+    }
+    
+    .login-btn {
+        padding: 0.875rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* Styles pour le tableau de bord utilisateur */
+.gaisio-user-dashboard {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.dashboard-header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 30px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 15px;
+    color: white;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.dashboard-header h1 {
+    margin: 0 0 15px 0;
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.welcome-message {
+    font-size: 1.2rem;
+    margin: 0;
+    opacity: 0.9;
+}
+
+.dashboard-content {
+    display: grid;
+    gap: 30px;
+    grid-template-columns: 1fr;
+}
+
+.user-info-card {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    border: 1px solid #e1e8ed;
+}
+
+.user-info-card h3 {
+    margin: 0 0 25px 0;
+    font-size: 1.5rem;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 10px;
+}
+
+.info-grid {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.info-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 10px;
+    border-left: 4px solid #3498db;
+}
+
+.info-item .label {
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+.info-item .value {
+    color: #34495e;
+    font-weight: 500;
+}
+
+.dashboard-actions {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    border: 1px solid #e1e8ed;
+}
+
+.dashboard-actions h3 {
+    margin: 0 0 25px 0;
+    font-size: 1.5rem;
+    color: #2c3e50;
+    border-bottom: 3px solid #e74c3c;
+    padding-bottom: 10px;
+}
+
+.action-buttons {
+    display: grid;
+    gap: 15px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.action-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 25px;
+    text-decoration: none;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    min-height: 50px;
+}
+
+.action-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+}
+
+.action-btn:not(.logout-btn) {
+    background: linear-gradient(135deg, #3498db, #2980b9);
+    color: white;
+}
+
+.logout-btn {
+    background: linear-gradient(135deg, #e74c3c, #c0392b);
+    color: white;
+}
+
+.logout-btn:hover {
+    background: linear-gradient(135deg, #c0392b, #a93226);
+}
+
+.recent-activity {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    border: 1px solid #e1e8ed;
+}
+
+.recent-activity h3 {
+    margin: 0 0 25px 0;
+    font-size: 1.5rem;
+    color: #2c3e50;
+    border-bottom: 3px solid #f39c12;
+    padding-bottom: 10px;
+}
+
+.activity-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.activity-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 10px;
+    border-left: 4px solid #f39c12;
+}
+
+.activity-icon {
+    font-size: 1.5rem;
+    width: 40px;
+    text-align: center;
+}
+
+.activity-text {
+    flex: 1;
+    font-weight: 500;
+    color: #2c3e50;
+}
+
+.activity-time {
+    color: #7f8c8d;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+/* Spinner pour le bouton de déconnexion */
+.spinner {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid #ffffff;
+    border-radius: 50%;
+    border-top-color: transparent;
+    animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .gaisio-user-dashboard {
+        padding: 15px;
+    }
+    
+    .dashboard-header {
+        padding: 20px;
+    }
+    
+    .dashboard-header h1 {
+        font-size: 2rem;
+    }
+    
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .action-buttons {
+        grid-template-columns: 1fr;
+    }
+    
+    .user-info-card,
+    .dashboard-actions,
+    .recent-activity {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .dashboard-header h1 {
+        font-size: 1.8rem;
+    }
+    
+    .info-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+    
+    .activity-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+} 
+
+/* Styles pour le menu de navigation de la page publique */
+.gaisio-public-nav {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+    border-radius: 0;
+    box-shadow: 0 15px 35px rgba(102, 126, 234, 0.3);
+    margin-bottom: 2rem;
+    border: none;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    width: 100%;
+    left: 0;
+    right: 0;
+}
+
+.nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* logo à gauche, menu à droite */
+    padding: 1rem 2rem;
+    flex-wrap: wrap;
+    position: relative;
+    gap: 1.5rem;
+    width: 100%;
+    max-width: none;
+}
+
+.nav-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 0;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+}
+
+.nav-brand {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-logo {
+    width: 70px; /* afficher toute l'image */
+    height: 45px;
+    object-fit: contain; /* pas de rognage */
+    object-position: left center;
+    display: block;
+    filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.35));
+    transition: transform 0.35s ease, filter 0.35s ease;
+}
+
+.nav-logo:hover {
+    transform: scale(1.05);
+    filter: drop-shadow(0 8px 18px rgba(0, 0, 0, 0.45));
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 1.5rem;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+}
+
+.nav-item {
+    margin: 0;
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 600;
+    font-size: 1rem;
+    border-radius: 15px;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    min-width: 120px;
+    justify-content: center;
+}
+
+.nav-link::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.8s ease;
+}
+
+.nav-link:hover::before {
+    left: 100%;
+}
+
+.nav-link:hover {
+    color: white;
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.4);
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.nav-link.active {
+    color: #667eea;
+    background: rgba(255, 255, 255, 0.95);
+    border-color: white;
+    box-shadow: 0 8px 25px rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+    font-weight: 700;
+}
+
+.nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    height: 4px;
+    background: linear-gradient(90deg, #ff9800, #ff5722, #ff9800);
+    border-radius: 2px;
+    animation: pulse-glow 2s ease-in-out infinite;
+    box-shadow: 0 0 15px rgba(255, 152, 0, 0.6);
+}
+
+.nav-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 6px;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 2;
+}
+
+.nav-toggle:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.4);
+    transform: scale(1.05);
+}
+
+.nav-toggle span {
+    width: 28px;
+    height: 3px;
+    background: white;
+    border-radius: 2px;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.nav-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(7px, 7px);
+    background: #667eea;
+}
+
+.nav-toggle.active span:nth-child(2) {
+    opacity: 0;
+    transform: translateX(-20px);
+}
+
+.nav-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px);
+    background: #667eea;
+}
+
+/* Styles pour les sections de la page publique */
+.gaisio-public-section {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive design pour le menu */
+@media (max-width: 768px) {
+    .nav-container {
+        padding: 1rem;
+        width: 100%;
+    }
+    
+    .nav-brand { justify-content: flex-start; }
+    
+    .nav-logo { width: 65px; height: 40px; }
+    
+    .nav-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        flex-direction: column;
+        padding: 1rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 0;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px);
+        animation: slideDown 0.4s ease-out;
+        width: 100%;
+    }
+    
+    .nav-menu.active {
+        display: flex;
+    }
+    
+    .nav-link {
+        width: 100%;
+        justify-content: center;
+        padding: 0.8rem;
+        margin-bottom: 0.3rem;
+        background: rgba(255, 255, 255, 0.1);
+        border-color: rgba(255, 255, 255, 0.2);
+    }
+    
+    .nav-link:hover {
+        background: rgba(255, 255, 255, 0.2);
+        transform: translateX(10px);
+    }
+    
+    .nav-toggle {
+        display: flex;
+    }
+    
+    .gaisio-public-nav {
+        position: relative;
+        width: 100%;
+        left: 0;
+        right: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-brand { justify-content: flex-start; }
+    
+    .nav-logo { width: 60px; height: 35px; }
+    
+    .nav-container {
+        padding: 0.8rem;
+    }
+    
+    .nav-link {
+        padding: 0.7rem;
+        font-size: 0.9rem;
+        min-width: auto;
+    }
+    
+    .nav-toggle {
+        padding: 0.6rem;
+    }
+    
+    .nav-toggle span {
+        width: 22px;
+    }
+}
+
+/* Animations supplémentaires */
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse-glow {
+    0%, 100% { 
+        opacity: 1; 
+        box-shadow: 0 0 15px rgba(255, 152, 0, 0.6);
+        transform: scale(1);
+    }
+    50% { 
+        opacity: 0.8; 
+        box-shadow: 0 0 25px rgba(255, 152, 0, 0.8);
+        transform: scale(1.05);
+    }
+}
+
+/* Effet de brillance sur le menu */
+.gaisio-public-nav::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, #667eea, #764ba2, #f093fb, #667eea);
+    border-radius: 0;
+    z-index: -1;
+    background-size: 400% 400%;
+    animation: gradient-shift 3s ease-in-out infinite;
+    opacity: 0.7;
+}
+
+@keyframes gradient-shift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+/* Styles pour la page de sélection de connexion */
+.gaisio-login-selection {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 25px;
+    box-shadow: 0 15px 35px rgba(102, 126, 234, 0.3);
+    color: white;
+    text-align: center;
+}
+
+.login-header h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.login-subtitle {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    margin-bottom: 3rem;
+}
+
+.login-options {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.login-option {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    padding: 2rem;
+    min-width: 250px;
+    transition: all 0.3s ease;
+}
+
+.login-option:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.4);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.option-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.login-option h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.login-option p {
+    opacity: 0.9;
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+}
+
+.option-btn {
+    background: rgba(255, 255, 255, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 15px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.option-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+    border-color: rgba(255, 255, 255, 0.5);
+    transform: scale(1.05);
+}
+
+/* Styles pour les formulaires de connexion */
+.login-form-container {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    padding: 2rem;
+    margin-top: 2rem;
+    color: #333;
+    text-align: left;
+}
+
+.form-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid #e1e8ed;
+}
+
+.form-header h3 {
+    margin: 0;
+    color: #2c3e50;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.btn-close-form {
+    background: #e74c3c;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-close-form:hover {
+    background: #c0392b;
+    transform: scale(1.1);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .gaisio-login-selection {
+        margin: 1rem;
+        padding: 1.5rem;
+    }
+    
+    .login-header h1 {
+        font-size: 2rem;
+    }
+    
+    .login-options {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    
+    .login-option {
+        min-width: auto;
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .gaisio-login-selection {
+        padding: 1rem;
+    }
+    
+    .login-header h1 {
+        font-size: 1.8rem;
+    }
+    
+    .login-option {
+        padding: 1rem;
+    }
+    
+    .option-icon {
+        font-size: 2.5rem;
+    }
+}

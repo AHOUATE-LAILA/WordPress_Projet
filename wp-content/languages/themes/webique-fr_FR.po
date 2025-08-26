@@ -1,0 +1,1406 @@
+# Translation of Themes - Webique in French (France)
+# This file is distributed under the same license as the Themes - Webique package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2025-06-20 07:18:23+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: GlotPress/4.0.1\n"
+"Language: fr\n"
+"Project-Id-Version: Themes - Webique\n"
+
+#. Description of the theme
+#: style.css
+#, gp-priority: high
+msgid "A powerful next generation theme for upcoming generations and traditional UI that focuses on the color combinations of solid and gradient colors, along with cool animations and attractive features. It’s perfect for any type of business. View the demo of Webique Pro https://www.nayrathemes.com/demo/pro/?theme=webique"
+msgstr "Un thème puissant pour les générations à venir et les IU traditionnelles, qui met l’accent sur les combinaisons de couleurs unies et dégradées, ainsi que sur de jolies animations et des fonctionnalités attrayantes. Il est parfait pour tout type d’entreprise. Voir la démo de Webique Pro https://www.nayrathemes.com/demo/pro/?theme=webique"
+
+#. Theme Name of the theme
+#: style.css
+#, gp-priority: high
+msgid "Webique"
+msgstr "Webique"
+
+#. translators: Theme Name
+#: inc/extras.php:612
+msgid "Get started with %s"
+msgstr "Premiers pas avec %s"
+
+#: inc/extras.php:609
+msgid "Install and activate <strong>Clever Fox</strong> plugin for taking full advantage of all the features this theme has to offer."
+msgstr "Installez et activez l’extension <strong>Clever Fox</strong> pour tirer pleinement avantage de toutes les fonctionnalités que ce thème a à offrir."
+
+#. translators: 1: welcome page link starting html tag, 2: welcome page link
+#. ending html tag.
+#: inc/extras.php:605
+msgid "Welcome! Thank you for choosing %1$s!"
+msgstr "Bienvenue ! Merci d’avoir choisi %1$s !"
+
+#: inc/extras.php:598
+msgid "Theme Screenshot"
+msgstr "Captures d’écran du thème"
+
+#: inc/sidebar/sidebar.php:80
+msgid "This widget area is for the Author widget"
+msgstr "Cette zone de widget est pour le widget Auteur/autrice."
+
+#: inc/extras.php:1775
+msgid "fa-teams"
+msgstr "fa-teams"
+
+#: inc/extras.php:1773
+msgid "Teams Call"
+msgstr "Appel d‘équipes"
+
+#: inc/extras.php:1635
+msgid "WE ARE A GOOD COMPANY"
+msgstr "NOUS SOMMES UNE ENTREPRISE DE QUALITÉ"
+
+#: inc/extras.php:997 inc/extras.php:1003 inc/extras.php:1009
+#: inc/extras.php:1015 inc/extras.php:1021 inc/extras.php:1027
+#: inc/extras.php:1033 inc/extras.php:1039
+msgid "Next Edge Works"
+msgstr "Prochains travaux"
+
+#: inc/extras.php:971
+msgid "Team"
+msgstr "Équipe"
+
+#: inc/customize/webique-premium.php:33
+msgid "Show Some Love"
+msgstr "Afficher un peu d’amour"
+
+#: inc/customize/webique-premium.php:29
+msgid "Free Vs Pro"
+msgstr "Gratuit Vs Pro"
+
+#: inc/customize/webique-premium.php:27
+msgid "Get Support"
+msgstr "Obtenir de l’aide"
+
+#: inc/customize/webique-premium.php:25
+msgid "View Documentation"
+msgstr "Voir la documentation"
+
+#: woocommerce/content-product.php:65
+msgid "out of 5"
+msgstr "sur 5"
+
+#: woocommerce/content-product.php:65
+msgid "Rated %s out of 5"
+msgstr "Noté %s sur 5"
+
+#: woocommerce/content-product.php:42
+msgid "Sale"
+msgstr "Promo"
+
+#: woocommerce/cart/mini-cart.php:118 woocommerce/cart/mini-cart.php:232
+msgid "No products in the cart."
+msgstr "Aucun article dans le panier."
+
+#: woocommerce/cart/mini-cart.php:112 woocommerce/cart/mini-cart.php:226
+msgid "Checkout"
+msgstr "Commande"
+
+#: woocommerce/cart/mini-cart.php:71 woocommerce/cart/mini-cart.php:185
+msgid "Remove this item"
+msgstr "Retirer cet élément"
+
+#: woocommerce/cart/mini-cart.php:46 woocommerce/cart/mini-cart.php:160
+msgid "Total:"
+msgstr "Total :"
+
+#. Template Name of the theme
+msgid "Fullwidth Page"
+msgstr "Page en pleine largeur"
+
+#. Template Name of the theme
+msgid "Homepage"
+msgstr "Page d’accueil"
+
+#: template-parts/sections/section-breadcrumb.php:47
+msgid "Author: %s"
+msgstr "Auteur/autrice : %s"
+
+#: template-parts/sections/section-breadcrumb.php:43
+msgid "Error 404"
+msgstr "Erreur 404"
+
+#: template-parts/sections/section-breadcrumb.php:39
+msgid "Tag Archives: %s"
+msgstr "Archives de l’étiquette : %s"
+
+#: template-parts/sections/section-breadcrumb.php:35
+msgid "Category Archives: %s"
+msgstr "Archives de la catégorie : %s"
+
+#: template-parts/sections/section-breadcrumb.php:31
+msgid "Yearly Archives: %s"
+msgstr "Archives annuelles&nbsp;: %s"
+
+#: template-parts/sections/section-breadcrumb.php:27
+msgid "Monthly Archives: %s"
+msgstr "Archives mensuelles&nbsp;: %s"
+
+#: template-parts/sections/section-breadcrumb.php:23
+msgid "Daily Archives: %s"
+msgstr "Archives quotidiennes : %s"
+
+#. translators: %s: Name of current post.
+#: template-parts/content/content.php:33
+msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Lire la suite %s <span class=\"meta-nav\">&rarr;</span>"
+
+#: template-parts/content/content-none.php:18
+msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
+msgstr "Il semblerait que nous ne soyons pas en mesure de trouver votre contenu. Essayez en lançant une recherche."
+
+#: template-parts/content/content-none.php:16
+msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
+msgstr "Désolé, mais rien ne correspond à vos critères de recherche. Veuillez réessayer avec d’autres mots-clés."
+
+#: template-parts/content/content-none.php:14
+msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr "Prêt·e à publier votre premier article ? <a href=\"%1$s\">Lancez-vous ici</a>."
+
+#: page.php:49 template-parts/content/content.php:38
+msgid "Pages:"
+msgstr "Pages :"
+
+#. translators: %s: Name of current post
+#: inc/template-tags.php:70
+msgid "Edit %s"
+msgstr "Modifier %s"
+
+#. translators: %s: post title
+#: inc/template-tags.php:63
+msgid "Leave a Comment<span class=\"screen-reader-text\"> on %s</span>"
+msgstr "Laisser un commentaire <span class=\"screen-reader-text\"> sur %s</span>"
+
+#: inc/template-tags.php:56
+msgid "Tagged %1$s"
+msgstr "Identifié %1$s"
+
+#: inc/template-tags.php:50
+msgid "Posted in %1$s"
+msgstr "Publié dans  %1$s"
+
+#. translators: used between list items, there is a space after the comma
+#: inc/template-tags.php:48 inc/template-tags.php:54
+msgid ", "
+msgstr ", "
+
+#: inc/template-tags.php:33
+msgctxt "post author"
+msgid "by %s"
+msgstr "par %s"
+
+#: inc/template-tags.php:28
+msgctxt "post date"
+msgid "Posted on %s"
+msgstr "Publié le %s"
+
+#: inc/sidebar/sidebar.php:78
+msgid "Author Widget Area"
+msgstr "Zone de widget de l’auteur/autrice"
+
+#: inc/sidebar/sidebar.php:70
+msgid "This Widget area for WooCommerce Widget"
+msgstr "Cette zone de widget est pour le widget WooCommerce"
+
+#: inc/sidebar/sidebar.php:68
+msgid "WooCommerce Widget Area"
+msgstr "Zone de widget WooCommerce"
+
+#: inc/sidebar/sidebar.php:58
+msgid "Footer Column 4"
+msgstr "Colonne de pied 4"
+
+#: inc/sidebar/sidebar.php:48
+msgid "Footer Column 3"
+msgstr "Colonne de pied 3"
+
+#: inc/sidebar/sidebar.php:38
+msgid "Footer Column 2"
+msgstr "Colonne de pied 2"
+
+#: inc/sidebar/sidebar.php:30 inc/sidebar/sidebar.php:40
+#: inc/sidebar/sidebar.php:50 inc/sidebar/sidebar.php:60
+msgid "The Footer Widget Area"
+msgstr "La zone de widgets du pied de page"
+
+#: inc/sidebar/sidebar.php:28
+msgid "Footer Column 1"
+msgstr "Colonne de pied 1"
+
+#: inc/sidebar/sidebar.php:20
+msgid "The Primary Widget Area"
+msgstr "La zone principale de widget"
+
+#: inc/sidebar/sidebar.php:18
+msgid "Sidebar Widget Area"
+msgstr "Zone de widget de colonne latérale"
+
+#: inc/extras.php:1944
+msgid "Sunday Closed"
+msgstr "Fermé le dimanche"
+
+#: inc/extras.php:1937
+msgid "Saturday 11:00 AM - 06:00 PM"
+msgstr "Samedi 11:00 – 18:00"
+
+#: inc/extras.php:1930
+msgid "Friday 11:00 AM - 06:00 PM"
+msgstr "Vendredi 11:00 – 18:00"
+
+#: inc/extras.php:1923
+msgid "Thursday 11:00 AM - 06:00 PM"
+msgstr "Jeudi 11:00 – 18:00"
+
+#: inc/extras.php:1916
+msgid "Wednesday 11:00 AM - 06:00 PM"
+msgstr "Mercredi 11:00 – 18:00"
+
+#: inc/extras.php:1909
+msgid "Tuesday 11:00 AM - 06:00 PM"
+msgstr "Mardi 11:00 – 18:00"
+
+#: inc/extras.php:1902
+msgid "Monday 11:00 AM - 06:00 PM"
+msgstr "Lundi 11:00 – 18:00"
+
+#: inc/extras.php:1886
+msgid "France"
+msgstr "France"
+
+#: inc/extras.php:1879
+msgid "Russia"
+msgstr "Russie"
+
+#: inc/extras.php:1872
+msgid "Spain"
+msgstr "Espagne"
+
+#: inc/extras.php:1865
+msgid "Germany"
+msgstr "Allemagne"
+
+#: inc/extras.php:1859 inc/extras.php:1866 inc/extras.php:1873
+#: inc/extras.php:1880 inc/extras.php:1887
+msgid "Office"
+msgstr "Bureau"
+
+#: inc/extras.php:1858
+msgid "United States"
+msgstr "États-Unis"
+
+#: inc/extras.php:1837
+msgid "Award 4"
+msgstr "Prix 4"
+
+#: inc/extras.php:1831
+msgid "Award 3"
+msgstr "Prix 3"
+
+#: inc/extras.php:1825
+msgid "Award 2"
+msgstr "Prix 2"
+
+#: inc/extras.php:1819
+msgid "Award 1"
+msgstr "Prix 1"
+
+#: inc/extras.php:1799
+msgid "fa-headphones"
+msgstr "fa-headphones"
+
+#: inc/extras.php:1797
+msgid "Live Chat"
+msgstr "Discussion instantanée"
+
+#: inc/extras.php:1791
+msgid "fa-video-camera"
+msgstr "fa-video-camera"
+
+#: inc/extras.php:1789
+msgid "Zoom Meeting"
+msgstr "Réunion Zoom"
+
+#: inc/extras.php:1783
+msgid "fa-whatsapp"
+msgstr "fa-whatsapp"
+
+#: inc/extras.php:1776 inc/extras.php:1784 inc/extras.php:1792
+#: inc/extras.php:1800
+msgid "Connect Now"
+msgstr "Se connecter maintenant"
+
+#: inc/extras.php:1774 inc/extras.php:1782 inc/extras.php:1790
+#: inc/extras.php:1798
+msgid "Find a brief answer to your short question here."
+msgstr "Trouvez ici une brève réponse à votre question."
+
+#: inc/extras.php:1755
+msgid "fa-money"
+msgstr "fa-money"
+
+#: inc/extras.php:1753
+msgid "Paid Time Off"
+msgstr "Congés payés"
+
+#: inc/extras.php:1749
+msgid "fa-coffee"
+msgstr "fa-coffee"
+
+#: inc/extras.php:1747
+msgid "Coffee & Snack"
+msgstr "Café et collation"
+
+#: inc/extras.php:1743
+msgid "fa-line-chart"
+msgstr "fa-line-chart"
+
+#: inc/extras.php:1741
+msgid "Career Growth"
+msgstr "Évolution de carrière"
+
+#: inc/extras.php:1737
+msgid "fa-heart-o"
+msgstr "fa-heart-o"
+
+#: inc/extras.php:1736 inc/extras.php:1742 inc/extras.php:1748
+#: inc/extras.php:1754
+msgid "Find a brief answer to your short question here"
+msgstr "Trouvez ici une brève réponse à votre question"
+
+#: inc/extras.php:1735
+msgid "Healthcare"
+msgstr "Soins de santé"
+
+#: inc/extras.php:1714
+msgid "fa-inbox"
+msgstr "fa-inbox"
+
+#: inc/extras.php:1705
+msgid "fa-codepen"
+msgstr "fa-codepen"
+
+#: inc/extras.php:1696
+msgid "fa-globe"
+msgstr "fa-globe"
+
+#: inc/extras.php:1687
+msgid "fa-laptop"
+msgstr "fa-laptop"
+
+#: inc/extras.php:1678
+msgid "fa-paint-brush"
+msgstr "fa-paint-brush"
+
+#: inc/extras.php:1671 inc/extras.php:1680 inc/extras.php:1689
+#: inc/extras.php:1698 inc/extras.php:1707 inc/extras.php:1716
+msgid "Apply Now"
+msgstr "Appliquer maintenant"
+
+#: inc/extras.php:1670 inc/extras.php:1679 inc/extras.php:1688
+#: inc/extras.php:1697 inc/extras.php:1706 inc/extras.php:1715
+msgid "FULL TIME"
+msgstr "TEMPS PLEIN"
+
+#: inc/extras.php:1669
+msgid "fa-user"
+msgstr "fa-user"
+
+#: inc/extras.php:1667 inc/extras.php:1676 inc/extras.php:1685
+#: inc/extras.php:1694 inc/extras.php:1703 inc/extras.php:1712
+msgid "Senior Staff Engineer"
+msgstr "Ingénieur·e senior"
+
+#: inc/extras.php:1648
+msgid "Marketing Automation"
+msgstr "Automatisation du marketing"
+
+#: inc/extras.php:1647
+msgid "WE OFFER FOR YOU"
+msgstr "NOUS VOUS PROPOSONS"
+
+#: inc/extras.php:1642
+msgid "Research & Strategy"
+msgstr "Recherche et stratégie"
+
+#: inc/extras.php:1641
+msgid "WHAT WE DO"
+msgstr "CE QUE NOUS FAISONS"
+
+#: inc/extras.php:1636
+msgid "Personal Development"
+msgstr "Développement personnel"
+
+#: inc/extras.php:1631 inc/extras.php:1637 inc/extras.php:1643
+#: inc/extras.php:1649 inc/extras.php:1668 inc/extras.php:1677
+#: inc/extras.php:1686 inc/extras.php:1695 inc/extras.php:1704
+#: inc/extras.php:1713
+msgid "Consectetur adipiscing elit sed do eiusm onsectetur adipiscing elit."
+msgstr "Consectetur adipiscing elit sed do eiusm onsectetur adipiscing elit."
+
+#: inc/extras.php:1630
+msgid "Marketing & Advertising"
+msgstr "Marketing et publicité"
+
+#: inc/extras.php:1629
+msgid "WHAT WE OFFER"
+msgstr "CE QUE NOUS PROPOSONS"
+
+#: inc/extras.php:1591 inc/extras.php:1596 inc/extras.php:1601
+#: inc/extras.php:1606 inc/extras.php:1611
+msgid "It is a long established fact that a reader will be distracted by readable content when looking at its layout."
+msgstr "Il est établi de longue date qu’un lecteur ou une lectrice sera distrait·e par un contenu lisible lorsqu’il ou elle regardera la mise en page."
+
+#: inc/extras.php:1590 inc/extras.php:1595 inc/extras.php:1600
+#: inc/extras.php:1605 inc/extras.php:1610
+msgid "What types of services do you offer?"
+msgstr "Quels types de services proposez-vous ?"
+
+#: inc/extras.php:1572
+msgid "70"
+msgstr "70"
+
+#: inc/extras.php:1571
+msgid "Consulting"
+msgstr "Conseil"
+
+#: inc/extras.php:1567
+msgid "80"
+msgstr "80"
+
+#: inc/extras.php:1566
+msgid "Finance Services"
+msgstr "Services financiers"
+
+#: inc/extras.php:1562
+msgid "90"
+msgstr "90"
+
+#: inc/extras.php:1561
+msgid "Digital Strategy"
+msgstr "Stratégie numérique"
+
+#: inc/extras.php:1366
+msgid "Business 5"
+msgstr "Entreprise 5"
+
+#: inc/extras.php:1359
+msgid "Business 4"
+msgstr "Entreprise 4"
+
+#: inc/extras.php:1352
+msgid "Business 3"
+msgstr "Entreprise 3"
+
+#: inc/extras.php:1345
+msgid "Business 2"
+msgstr "Entreprise 2"
+
+#: inc/extras.php:1338
+msgid "Business 1"
+msgstr "Entreprise 1"
+
+#: inc/extras.php:1288
+msgid "Executive Officer"
+msgstr "Dirigeante exécutive"
+
+#: inc/extras.php:1287
+msgid "Christiana Ena"
+msgstr "Christiana Ena"
+
+#: inc/extras.php:1251
+msgid "Manager and director"
+msgstr "Gestionnaire et directeur"
+
+#: inc/extras.php:1250
+msgid "Aoron Finch"
+msgstr "Aoron Finch"
+
+#: inc/extras.php:1214
+msgid "Project Manager"
+msgstr "Chef de projet"
+
+#: inc/extras.php:1213
+msgid "Glenn Maxwell"
+msgstr "Glenn Maxwell"
+
+#: inc/extras.php:1177
+msgid "Executive"
+msgstr "Cadre"
+
+#: inc/extras.php:1176
+msgid "Steven Lucy"
+msgstr "Steven Lucy"
+
+#: inc/extras.php:1151
+msgid "Best Interface"
+msgstr "Meilleure interface"
+
+#: inc/extras.php:1140
+msgid "Recommended"
+msgstr "Recommandé"
+
+#: inc/extras.php:1129
+msgid "Reliable Service"
+msgstr "Service fiable"
+
+#: inc/extras.php:1118
+msgid "Good Quality"
+msgstr "Bonne qualité"
+
+#: inc/extras.php:1114 inc/extras.php:1125 inc/extras.php:1136
+#: inc/extras.php:1147 inc/extras.php:1158
+msgid "Engineer"
+msgstr "Ingénieure"
+
+#: inc/extras.php:1113 inc/extras.php:1124 inc/extras.php:1135
+#: inc/extras.php:1146 inc/extras.php:1157
+msgid "Jasica Brown"
+msgstr "Jasica Brown"
+
+#: inc/extras.php:1111 inc/extras.php:1122 inc/extras.php:1133
+#: inc/extras.php:1144 inc/extras.php:1155
+msgid "5"
+msgstr "5"
+
+#: inc/extras.php:1110 inc/extras.php:1121 inc/extras.php:1132
+#: inc/extras.php:1143 inc/extras.php:1154
+msgid "Context"
+msgstr "Contexte"
+
+#: inc/extras.php:1108 inc/extras.php:1119 inc/extras.php:1130
+#: inc/extras.php:1141 inc/extras.php:1152
+msgid " Dabus nisl aliquet congue tellus nascetur lectus sagittis mattis arcu dictumst augue volutpat felis etiam suspendisse rhoncus mauris dignissim ante Sagpien."
+msgstr " Dabus nisl aliquet congue tellus nascetur lectus sagittis mattis arcu dictumst augue volutpat felis etiam suspendisse rhoncus mauris dignissim ante Sagpien."
+
+#: inc/extras.php:1107
+msgid "Best Design"
+msgstr "Meilleur design"
+
+#: inc/extras.php:1087
+msgid "Professional Team"
+msgstr "Équipe professionnelle"
+
+#: inc/extras.php:1081
+msgid "Service Rating"
+msgstr "Évaluation du service"
+
+#: inc/extras.php:1075
+msgid "Awards"
+msgstr "Prix"
+
+#: inc/extras.php:1069
+msgid "Years Of Experience"
+msgstr "Années d’expérience"
+
+#: inc/extras.php:1063
+msgid "Completed Projects"
+msgstr "Projets terminés"
+
+#: inc/extras.php:1057
+msgid "Happy Customers"
+msgstr "Clients satisfaits"
+
+#: inc/extras.php:1038
+msgid "Training & Support"
+msgstr "Formation et support"
+
+#: inc/extras.php:1032
+msgid "Awesome Clients"
+msgstr "Clients incroyables"
+
+#: inc/extras.php:1026
+msgid "Friday Teatime Talks"
+msgstr "Conversations du vendredi autour du thé"
+
+#: inc/extras.php:1020
+msgid "Public Transport"
+msgstr "Transports publics"
+
+#: inc/extras.php:1014
+msgid "Generous Holiday"
+msgstr "Vacances exceptionnelles"
+
+#: inc/extras.php:1008
+msgid "Well Stocked Fridge"
+msgstr "Réfrigérateur bien approvisionné"
+
+#: inc/extras.php:1002
+msgid "Macbook Pro"
+msgstr "MacBook Pro"
+
+#: inc/extras.php:996
+msgid "Flexible Office Hours"
+msgstr "Heures de bureau flexibles"
+
+#: inc/extras.php:961
+msgid "Instagram"
+msgstr "Instagram"
+
+#: inc/extras.php:953
+msgid "Facebook"
+msgstr "Facebook"
+
+#: inc/extras.php:943 inc/extras.php:1781
+msgid "WhatsApp"
+msgstr "WhatsApp"
+
+#: inc/extras.php:916
+msgid "Seo & Optimization"
+msgstr "Référencement et optimisation"
+
+#: inc/extras.php:905
+msgid "Email Marketing"
+msgstr "Marketing par e-mail"
+
+#: inc/extras.php:894
+msgid "Data Security"
+msgstr "Sécurité des données"
+
+#: inc/extras.php:883
+msgid "Digital Marketing"
+msgstr "Marketing numérique"
+
+#: inc/extras.php:872
+msgid "Facebook Ads"
+msgstr "Annonces Facebook"
+
+#: inc/extras.php:863 inc/extras.php:874 inc/extras.php:885 inc/extras.php:896
+#: inc/extras.php:907 inc/extras.php:918
+#: template-parts/content/content-page.php:44
+#: template-parts/content/content-search.php:37
+#: template-parts/sections/section-blog.php:71
+msgid "Read More"
+msgstr "Lire la suite"
+
+#: inc/extras.php:862 inc/extras.php:873 inc/extras.php:884 inc/extras.php:895
+#: inc/extras.php:906 inc/extras.php:917
+msgid "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout."
+msgstr "Il est établi depuis longtemps qu’un lecteur ou une lectrice sera distrait·e par le contenu lisible d’une page lorsqu’il ou elle regardera sa mise en page."
+
+#: inc/extras.php:861
+msgid "Secure Business"
+msgstr "Affaires sécurisées"
+
+#: inc/extras.php:768 inc/extras.php:806 inc/extras.php:844
+msgid "4"
+msgstr "4"
+
+#: inc/extras.php:767 inc/extras.php:805 inc/extras.php:843
+msgid "Agency Award"
+msgstr "Prix de l’agence"
+
+#: inc/extras.php:766 inc/extras.php:804 inc/extras.php:842
+msgid "Best"
+msgstr "Meilleur"
+
+#: inc/extras.php:765 inc/extras.php:803 inc/extras.php:841
+msgid "Real Customers"
+msgstr "Clientèle réel"
+
+#: inc/extras.php:764 inc/extras.php:802 inc/extras.php:840
+msgid "10k+"
+msgstr "10k+"
+
+#: inc/extras.php:739 inc/extras.php:777 inc/extras.php:815
+msgid "Get Started"
+msgstr "Premiers pas"
+
+#: inc/extras.php:738 inc/extras.php:776 inc/extras.php:814
+msgid "We create and build flexible & creative design within your budget. Helping you increase sales"
+msgstr "Nous créons et réalisons des designs flexibles et créatifs dans votre budget. Nous vous aidons à augmenter vos ventes."
+
+#: inc/extras.php:737 inc/extras.php:775 inc/extras.php:813
+msgid "Agency"
+msgstr "Agence"
+
+#: inc/extras.php:736 inc/extras.php:774 inc/extras.php:812
+msgid "Innovative"
+msgstr "Innovant"
+
+#: inc/extras.php:706
+msgid "Marketing"
+msgstr "Marketing"
+
+#: inc/extras.php:699
+msgid "Branding Design"
+msgstr "Conception d’identité de marque"
+
+#: inc/extras.php:692
+msgid "Brand Identify"
+msgstr "Identification de la marque"
+
+#: inc/extras.php:685
+msgid "App Development"
+msgstr "Développement d’app"
+
+#: inc/extras.php:678
+msgid "Graphic Design"
+msgstr "Conception graphique"
+
+#: inc/extras.php:671 inc/extras.php:713 inc/extras.php:735 inc/extras.php:773
+#: inc/extras.php:811
+msgid "Web Development"
+msgstr "Développement web"
+
+#: inc/extras.php:462
+msgid "<a href=\"#\">Webique</a>"
+msgstr "<a href=\"#\">Webique</a>"
+
+#. translators: %s Comment number
+#: inc/extras.php:429
+msgid "%s Comment"
+msgid_plural "%s Comments"
+msgstr[0] "%s commentaire"
+msgstr[1] "%s commentaires"
+
+#: inc/extras.php:426
+msgid "0 Comments"
+msgstr "Aucun commentaire"
+
+#: inc/extras.php:345
+msgid "Add Widgets"
+msgstr "Ajouter des widgets"
+
+#: inc/extras.php:222
+msgid "fa-behance"
+msgstr "fa-behance"
+
+#: inc/extras.php:217
+msgid "fa-linkedin"
+msgstr "fa-linkedin"
+
+#: inc/extras.php:212
+msgid "fa-twitter"
+msgstr "fa-twitter"
+
+#: inc/extras.php:207
+msgid "fa-google-plus"
+msgstr "fa-google-plus"
+
+#: inc/extras.php:203 inc/extras.php:208 inc/extras.php:213 inc/extras.php:218
+#: inc/extras.php:223 inc/extras.php:740 inc/extras.php:741 inc/extras.php:778
+#: inc/extras.php:779 inc/extras.php:816 inc/extras.php:817 inc/extras.php:864
+#: inc/extras.php:875 inc/extras.php:886 inc/extras.php:899 inc/extras.php:908
+#: inc/extras.php:919 inc/extras.php:944 inc/extras.php:955 inc/extras.php:963
+#: inc/extras.php:973
+msgid "#"
+msgstr "#"
+
+#: inc/extras.php:202
+msgid "fa-facebook"
+msgstr "fa-facebook"
+
+#: inc/extras.php:147
+msgid "0"
+msgstr "0"
+
+#: inc/extras.php:114
+msgid "Type To Search"
+msgstr "Saisissez votre recherche"
+
+#: inc/extras.php:113
+msgid "Site Search"
+msgstr "Recherche du site"
+
+#: inc/customizer-repeater/class/customizer-repeater-control.php:1407
+msgid "Service 5"
+msgstr "Service 5"
+
+#: inc/customizer-repeater/class/customizer-repeater-control.php:1403
+msgid "Service 4"
+msgstr "Service 4"
+
+#: inc/customizer-repeater/class/customizer-repeater-control.php:1399
+msgid "Service 3"
+msgstr "Service 3"
+
+#: inc/customizer-repeater/class/customizer-repeater-control.php:1395
+msgid "Service 2"
+msgstr "Service 2"
+
+#: inc/customizer-repeater/class/customizer-repeater-control.php:1391
+msgid "Service 1"
+msgstr "Service 1"
+
+#: inc/customizer-repeater/class/customizer-repeater-control.php:1385
+msgid "Customer Image"
+msgstr "Image du client/cliente"
+
+#: inc/customizer-repeater/class/customizer-repeater-control.php:1379
+msgid "No. of Star"
+msgstr "Nombre d’étoiles"
+
+#: inc/customizer-repeater/class/customizer-repeater-control.php:1375
+msgid "Name"
+msgstr "Nom"
+
+#: inc/customizer-repeater/class/customizer-repeater-control.php:1371
+msgid "Review Text"
+msgstr "Texte de l’avis"
+
+#: inc/customizer-repeater/class/customizer-repeater-control.php:1367
+msgid "Review Title"
+msgstr "Titre de l’avis"
+
+#: inc/customizer-repeater/class/customizer-repeater-control.php:1346
+msgid "Add Image"
+msgstr "Ajouter une image"
+
+#: inc/customizer-repeater/class/customizer-repeater-control.php:1342
+msgid "Remove"
+msgstr "Retirer"
+
+#: inc/customizer-repeater/class/customizer-repeater-control.php:1290
+#: inc/customizer-repeater/class/customizer-repeater-control.php:1323
+msgid "Add Icon"
+msgstr "Ajouter une icône"
+
+#: inc/customizer-repeater/class/customizer-repeater-control.php:1285
+#: inc/customizer-repeater/class/customizer-repeater-control.php:1315
+msgid "Remove Icon"
+msgstr "Supprimer l’icône"
+
+#: inc/customizer-repeater/class/customizer-repeater-control.php:1268
+msgid "Social icons"
+msgstr "Icônes sociaux"
+
+#: inc/customizer-repeater/class/customizer-repeater-control.php:1260
+msgid "None"
+msgstr "Aucun"
+
+#: inc/customizer-repeater/class/customizer-repeater-control.php:1255
+msgid "Image type"
+msgstr "Type d’image"
+
+#: inc/customizer-repeater/class/customizer-repeater-control.php:1244
+msgid "Center"
+msgstr "Centre"
+
+#: inc/customizer-repeater/class/customizer-repeater-control.php:1240
+msgid "Right"
+msgstr "Droite"
+
+#: inc/customizer-repeater/class/customizer-repeater-control.php:1236
+msgid "Left"
+msgstr "Gauche"
+
+#: inc/customizer-repeater/class/customizer-repeater-control.php:1232
+msgid "Slide Align"
+msgstr "Alignement des diapo"
+
+#: inc/customizer-repeater/class/customizer-repeater-control.php:1221
+msgid "Image 3"
+msgstr "Image 3"
+
+#: inc/customizer-repeater/class/customizer-repeater-control.php:1192
+msgid "Image 2"
+msgstr "Image 2"
+
+#: inc/customizer-repeater/class/customizer-repeater-control.php:1166
+#: inc/customizer-repeater/class/customizer-repeater-control.php:1195
+#: inc/customizer-repeater/class/customizer-repeater-control.php:1224
+msgid "Upload Image"
+msgstr "Téléverser une image"
+
+#: inc/customizer-repeater/class/customizer-repeater-control.php:1163
+#: inc/customizer-repeater/class/customizer-repeater-control.php:1259
+msgid "Image"
+msgstr "Image"
+
+#: inc/customizer-repeater/class/customizer-repeater-control.php:1128
+msgid "http://fontawesome.io/icons/"
+msgstr "http://fontawesome.io/icons/"
+
+#: inc/customizer-repeater/class/customizer-repeater-control.php:1127
+msgid "Note: Some icons may not be displayed here. You can see the full list of icons at %1$s."
+msgstr "Note : Quelques icônes peuvent ne pas s’afficher ici. Vous pouvez voir la liste complète des icônes sur %1$s"
+
+#: inc/customizer-repeater/class/customizer-repeater-control.php:1122
+#: inc/customizer-repeater/class/customizer-repeater-control.php:1258
+msgid "Icon"
+msgstr "Icône"
+
+#: inc/customizer-repeater/class/customizer-repeater-control.php:1110
+msgid "Add \"nofollow\" To Link:"
+msgstr "Ajouter « nofollow » au lien :"
+
+#: inc/customizer-repeater/class/customizer-repeater-control.php:1108
+msgid "Open In New Tab:"
+msgstr "Ouvrir dans un nouvel onglet :"
+
+#: inc/customizer-repeater/class/customizer-repeater-control.php:1106
+msgid "Enable Setting:"
+msgstr "Activer le réglage :"
+
+#: inc/customizer-repeater/class/customizer-repeater-control.php:1068
+msgid "Delete field"
+msgstr "Supprimer le champ"
+
+#: inc/customizer-repeater/class/customizer-repeater-control.php:771
+msgid "Delete %s"
+msgstr "Supprimer %s"
+
+#: inc/customizer-repeater/class/customizer-repeater-control.php:751
+#: inc/customizer-repeater/class/customizer-repeater-control.php:1057
+#: inc/customizer-repeater/class/customizer-repeater-control.php:1382
+msgid "Designation"
+msgstr "Désignation"
+
+#: inc/customizer-repeater/class/customizer-repeater-control.php:743
+#: inc/customizer-repeater/class/customizer-repeater-control.php:1048
+msgid "Shortcode"
+msgstr "Code court"
+
+#: inc/customizer-repeater/class/customizer-repeater-control.php:733
+#: inc/customizer-repeater/class/customizer-repeater-control.php:821
+msgid "Color 2"
+msgstr "Couleur 2"
+
+#: inc/customizer-repeater/class/customizer-repeater-control.php:725
+#: inc/customizer-repeater/class/customizer-repeater-control.php:813
+msgid "Color"
+msgstr "Couleur"
+
+#: inc/customizer-repeater/class/customizer-repeater-control.php:688
+#: inc/customizer-repeater/class/customizer-repeater-control.php:1035
+msgid "Video Url"
+msgstr "URL de la vidéo"
+
+#: inc/customizer-repeater/class/customizer-repeater-control.php:663
+#: inc/customizer-repeater/class/customizer-repeater-control.php:1009
+msgid "Link 7"
+msgstr "Lien 7"
+
+#: inc/customizer-repeater/class/customizer-repeater-control.php:656
+#: inc/customizer-repeater/class/customizer-repeater-control.php:1002
+msgid "Text 7"
+msgstr "Texte 7"
+
+#: inc/customizer-repeater/class/customizer-repeater-control.php:647
+#: inc/customizer-repeater/class/customizer-repeater-control.php:993
+msgid "Link 6"
+msgstr "Lien 6"
+
+#: inc/customizer-repeater/class/customizer-repeater-control.php:640
+#: inc/customizer-repeater/class/customizer-repeater-control.php:986
+msgid "Text 6"
+msgstr "Texte 6"
+
+#: inc/customizer-repeater/class/customizer-repeater-control.php:631
+#: inc/customizer-repeater/class/customizer-repeater-control.php:977
+msgid "Link 5"
+msgstr "Lien 5"
+
+#: inc/customizer-repeater/class/customizer-repeater-control.php:624
+#: inc/customizer-repeater/class/customizer-repeater-control.php:970
+msgid "Text 5"
+msgstr "Texte 5"
+
+#: inc/customizer-repeater/class/customizer-repeater-control.php:615
+#: inc/customizer-repeater/class/customizer-repeater-control.php:961
+msgid "Link 4"
+msgstr "Lien 4"
+
+#: inc/customizer-repeater/class/customizer-repeater-control.php:608
+#: inc/customizer-repeater/class/customizer-repeater-control.php:954
+msgid "Text 4"
+msgstr "Texte 4"
+
+#: inc/customizer-repeater/class/customizer-repeater-control.php:599
+#: inc/customizer-repeater/class/customizer-repeater-control.php:945
+msgid "Link 3"
+msgstr "Lien 3"
+
+#: inc/customizer-repeater/class/customizer-repeater-control.php:592
+#: inc/customizer-repeater/class/customizer-repeater-control.php:938
+msgid "Text 3"
+msgstr "Texte 3"
+
+#: inc/customizer-repeater/class/customizer-repeater-control.php:583
+#: inc/customizer-repeater/class/customizer-repeater-control.php:929
+msgid "Link 2"
+msgstr "Lien 2"
+
+#: inc/customizer-repeater/class/customizer-repeater-control.php:576
+#: inc/customizer-repeater/class/customizer-repeater-control.php:922
+msgid "Text 2"
+msgstr "Texte 2"
+
+#: inc/customizer-repeater/class/customizer-repeater-control.php:567
+#: inc/customizer-repeater/class/customizer-repeater-control.php:913
+#: inc/customizer-repeater/class/customizer-repeater-control.php:1282
+#: inc/customizer-repeater/class/customizer-repeater-control.php:1304
+msgid "Link"
+msgstr "Lien"
+
+#: inc/customizer-repeater/class/customizer-repeater-control.php:560
+#: inc/customizer-repeater/class/customizer-repeater-control.php:906
+msgid "Text"
+msgstr "Texte"
+
+#: inc/customizer-repeater/class/customizer-repeater-control.php:551
+#: inc/customizer-repeater/class/customizer-repeater-control.php:897
+msgid "Button 2 Link"
+msgstr "Lien du bouton 2"
+
+#: inc/customizer-repeater/class/customizer-repeater-control.php:542
+#: inc/customizer-repeater/class/customizer-repeater-control.php:888
+msgid "Button 2 Text"
+msgstr "Texte du bouton 2"
+
+#: inc/customizer-repeater/class/customizer-repeater-control.php:533
+#: inc/customizer-repeater/class/customizer-repeater-control.php:879
+msgid "Button Link"
+msgstr "Lien du bouton"
+
+#: inc/customizer-repeater/class/customizer-repeater-control.php:524
+#: inc/customizer-repeater/class/customizer-repeater-control.php:870
+msgid "Button Text"
+msgstr "Texte du bouton"
+
+#: inc/customizer-repeater/class/customizer-repeater-control.php:516
+#: inc/customizer-repeater/class/customizer-repeater-control.php:862
+msgid "Description 2"
+msgstr "Description 2"
+
+#: inc/customizer-repeater/class/customizer-repeater-control.php:500
+#: inc/customizer-repeater/class/customizer-repeater-control.php:846
+msgid "Subtitle 2"
+msgstr "Sous-titre 2"
+
+#: inc/customizer-repeater/class/customizer-repeater-control.php:492
+#: inc/customizer-repeater/class/customizer-repeater-control.php:838
+msgid "Subtitle"
+msgstr "Sous-titre"
+
+#: inc/customizer-repeater/class/customizer-repeater-control.php:65
+msgid "Customizer Repeater"
+msgstr "Personnaliser le répéteur"
+
+#: inc/customizer-repeater/class/customizer-repeater-control.php:60
+msgid "Add new field"
+msgstr "Ajouter un nouveau champ"
+
+#: inc/customizer-notify/webique-customizer-notify.php:114
+msgid "Activating"
+msgstr "Activation"
+
+#: inc/customize/webique-header.php:159 inc/customize/webique-header.php:178
+msgid "Sticky Header"
+msgstr "Entête fixe"
+
+#: inc/customize/webique-header.php:128
+msgid "Toggle"
+msgstr "Permuter"
+
+#: inc/customize/webique-header.php:91
+msgid "Cart"
+msgstr "Panier"
+
+#: inc/customize/webique-header.php:71 inc/customize/webique-header.php:109
+#: inc/customize/webique-header.php:145 inc/customize/webique-header.php:195
+msgid "Hide/Show"
+msgstr "Masquer/Afficher"
+
+#: inc/customize/webique-header.php:54
+msgid "Search"
+msgstr "Rechercher"
+
+#: inc/customize/webique-header.php:35
+msgid "Header Navigation"
+msgstr "Navigation d’entête"
+
+#: inc/customize/webique-header.php:23
+msgid "Site Identity"
+msgstr "Identité du site"
+
+#: inc/customize/webique-general.php:295
+msgid "Container Width"
+msgstr "Largeur du conteneur"
+
+#: inc/customize/webique-general.php:275
+msgid "Container"
+msgstr "Conteneur"
+
+#: inc/customize/webique-general.php:263
+msgid "Fixed"
+msgstr "Fixe"
+
+#: inc/customize/webique-general.php:262
+msgid "Scroll"
+msgstr "Défilement"
+
+#: inc/customize/webique-general.php:261
+msgid "Inherit"
+msgstr "Hérité"
+
+#: inc/customize/webique-general.php:256
+msgid "Background Attachment"
+msgstr "Image d’arrière-plan"
+
+#: inc/customize/webique-general.php:219
+msgid "Background"
+msgstr "Arrière-plan"
+
+#: inc/customize/webique-general.php:193
+msgid "Min Height"
+msgstr "Hauteur mini"
+
+#: inc/customize/webique-general.php:154
+msgid "Enable Water Effect on Breadcrumb?"
+msgstr "Activer l’effet d’eau sur le fil d’Ariane ?"
+
+#: inc/customize/webique-general.php:133
+msgid "Hide / Show Section"
+msgstr "Masquer/Afficher la section"
+
+#: inc/customize/webique-general.php:114
+msgid "Settings"
+msgstr "Réglages"
+
+#: inc/customize/webique-general.php:94
+msgid "Breadcrumb"
+msgstr "Fil d’Ariane"
+
+#: inc/customize/webique-general.php:68
+msgid "Unlock By Upgrade to Pro"
+msgstr "Déverrouiller en passant à la version Pro"
+
+#: inc/customize/webique-general.php:56
+msgid "Scroller Icon"
+msgstr "Icône du défileur"
+
+#: inc/customize/webique-general.php:37
+msgid "Hide / Show Scroller"
+msgstr "Masquer/Afficher le défilement"
+
+#: inc/customize/webique-general.php:18
+msgid "Scroller"
+msgstr "Défileur"
+
+#: inc/customize/webique-general.php:7
+msgid "General"
+msgstr "Général"
+
+#: inc/customize/webique-footer.php:212
+msgid "opacity"
+msgstr "opacité"
+
+#: inc/customize/webique-footer.php:193
+msgid "Opacity Color"
+msgstr "Couleur d’opacité"
+
+#: inc/customize/webique-footer.php:174 inc/customize/webique-general.php:237
+msgid "Background Image"
+msgstr "Image d’arrière-plan"
+
+#: inc/customize/webique-footer.php:156
+msgid "Background Color"
+msgstr "Couleur d’arrière-plan"
+
+#: inc/customize/webique-footer.php:136
+msgid "Enable Water Effect"
+msgstr "Activer l’effet d’eau"
+
+#: inc/customize/webique-footer.php:116
+msgid "Footer Background"
+msgstr "Arrière-plan du pied de page"
+
+#: inc/customize/webique-footer.php:91 inc/customize/webique-premium.php:9
+#: inc/customize/webique-premium.php:31
+msgid "Upgrade to Pro"
+msgstr "Passer à la version Pro"
+
+#: inc/customize/webique-footer.php:78
+msgid "Card"
+msgstr "Carte"
+
+#: inc/customize/webique-footer.php:77
+msgid "Add New Card"
+msgstr "Ajouter une carte"
+
+#: inc/customize/webique-footer.php:75
+msgid "Cards"
+msgstr "Cartes"
+
+#: inc/customize/webique-footer.php:60
+msgid "Payments"
+msgstr "Paiements"
+
+#: inc/customize/webique-footer.php:40
+msgid "Copyright Text"
+msgstr "Texte du droit d’auteur"
+
+#: inc/customize/webique-footer.php:27
+msgid "Copyright &copy; [current_year] [site_title] | Powered by [theme_author]"
+msgstr "Copyright &copy; [current_year] [site_title] | Propulsé par [theme_author]"
+
+#: inc/customize/webique-footer.php:20
+msgid "Below Footer"
+msgstr "Sous le pied de page"
+
+#: inc/customize/webique-footer.php:10
+msgid "Footer"
+msgstr "Pied de page"
+
+#: inc/customize/webique-blog.php:147
+msgid "No of Posts Display"
+msgstr "Nombre d’articles à afficher"
+
+#: inc/customize/webique-blog.php:128 inc/customize/webique-general.php:173
+msgid "Content"
+msgstr "Contenu"
+
+#: inc/customize/webique-blog.php:107
+#: inc/customizer-repeater/class/customizer-repeater-control.php:508
+#: inc/customizer-repeater/class/customizer-repeater-control.php:854
+msgid "Description"
+msgstr "Description"
+
+#: inc/customize/webique-blog.php:87
+#: inc/customizer-repeater/class/customizer-repeater-control.php:484
+#: inc/customizer-repeater/class/customizer-repeater-control.php:830
+msgid "Title"
+msgstr "Titre"
+
+#: inc/customize/webique-blog.php:68 inc/customize/webique-header.php:12
+msgid "Header"
+msgstr "Entête"
+
+#: inc/customize/webique-blog.php:49
+msgid "Hide / Show"
+msgstr "Masquer/Afficher"
+
+#: inc/customize/webique-blog.php:29
+msgid "Setting"
+msgstr "Réglage"
+
+#: inc/customize/webique-blog.php:9
+msgid "Blog Section"
+msgstr "Section de blog"
+
+#: inc/customize/customizer_recommended_plugin.php:18
+msgid "Deactivate"
+msgstr "Désactiver"
+
+#: inc/customize/customizer_recommended_plugin.php:17
+msgid "Activate"
+msgstr "Activer"
+
+#: inc/customize/customizer_recommended_plugin.php:16
+msgid "Install and Activate"
+msgstr "Installer et activer"
+
+#: inc/customize/customizer_recommended_plugin.php:15
+msgid "Recommended Plugin"
+msgstr "Extension recommandée"
+
+#: inc/customize/customizer_recommended_plugin.php:14
+msgid "Recommended Actions"
+msgstr "Actions recommandées"
+
+#: inc/customize/customizer_recommended_plugin.php:10
+msgid "Install and activate <strong>Cleverfox</strong> plugin for taking full advantage of all the features this theme has to offer."
+msgstr "Installez et activer l’extension <strong>Clever Fox</strong> pour tirer pleinement avantage de toutes les fonctionnalités que ce thème a à offrir."
+
+#: inc/class-wp-bootstrap-navwalker.php:393
+msgid "Add a menu"
+msgstr "Ajouter un menu"
+
+#: inc/breadcrumb/breadcrumb.php:149
+msgid "Page"
+msgstr "Page"
+
+#: inc/breadcrumb/breadcrumb.php:144
+msgid "Error 404 "
+msgstr "Erreur 404"
+
+#: inc/breadcrumb/breadcrumb.php:140
+msgid "Articles posted by "
+msgstr "Articles publiés par"
+
+#: inc/breadcrumb/breadcrumb.php:134
+msgid "Posts tagged "
+msgstr "Articles étiquetés"
+
+#: inc/breadcrumb/breadcrumb.php:32
+msgid "Search results for "
+msgstr "Résultats de recherche pour"
+
+#: inc/breadcrumb/breadcrumb.php:26
+msgid "Archive by category"
+msgstr "Archive par catégorie"
+
+#: inc/breadcrumb/breadcrumb.php:6
+msgid "Home"
+msgstr "Accueil"
+
+#: inc/breadcrumb/breadcrumb.php:4 inc/breadcrumb/breadcrumb.php:7
+msgid "1"
+msgstr "1"
+
+#: header.php:18
+msgid "Skip to content"
+msgstr "Aller au contenu"
+
+#: functions.php:43
+msgid "Primary Menu"
+msgstr "Menu principal"
+
+#: comments.php:77
+msgid "Comments are closed."
+msgstr "Les commentaires sont fermés."
+
+#: comments.php:45 comments.php:65
+msgid "Newer Comments"
+msgstr "Commentaires plus récents"
+
+#: comments.php:44 comments.php:64
+msgid "Older Comments"
+msgstr "Commentaires plus anciens"
+
+#: comments.php:41 comments.php:62
+msgid "Comment navigation"
+msgstr "Navigation des commentaires"
+
+#: 404.php:21
+msgid "Go To Home"
+msgstr "Aller à l’accueil"
+
+#: 404.php:19
+msgid "Oops! The Page you are looking for does not exist"
+msgstr "Aïe ! La page que vous recherchez n’existe pas."
+
+#: 404.php:18
+msgid "Page Not Found"
+msgstr "Page non trouvée"
+
+#: 404.php:17
+msgid "404"
+msgstr "404"
+
+#. Theme URI of the theme
+#: style.css
+#, gp-priority: low
+msgid "https://www.nayrathemes.com/webique-free/"
+msgstr "https://www.nayrathemes.com/webique-free/"
+
+#. Author URI of the theme
+#: style.css
+#, gp-priority: low
+msgid "https://www.nayrathemes.com/"
+msgstr "https://www.nayrathemes.com/"
+
+#. Author of the theme
+#: style.css
+#, gp-priority: low
+msgid "Nayra Themes"
+msgstr "Nayra Themes"

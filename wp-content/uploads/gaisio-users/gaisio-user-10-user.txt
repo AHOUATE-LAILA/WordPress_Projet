@@ -1,0 +1,74 @@
+================================================================
+🔐 FICHIER D'INSTALLATION - COMPTE UTILISATEUR GAISIO
+================================================================
+
+📅 Date de création : 13/08/2025 13:19
+🌐 Site : GAISIO
+🔗 URL : http://localhost/WordPress3
+
+================================================================
+👤 INFORMATIONS PERSONNELLES
+================================================================
+Nom d'affichage : USER
+Email : [À remplir par l'administrateur]
+
+================================================================
+🔑 INFORMATIONS DE CONNEXION
+================================================================
+Identifiant de connexion : USER
+Code d'accès : 28AWZAHC
+URL de connexion : http://localhost/WordPress3/wp-login.php
+
+================================================================
+📋 INSTRUCTIONS D'INSTALLATION
+================================================================
+1. Ouvrez votre navigateur web
+2. Allez à l'adresse : http://localhost/WordPress3/wp-login.php
+3. Saisissez votre identifiant : USER
+4. Saisissez votre code d'accès : 28AWZAHC
+5. Cliquez sur 'Se connecter'
+6. Changez votre code d'accès après la première connexion
+
+================================================================
+⚠️ SÉCURITÉ ET CONFIDENTIALITÉ
+================================================================
+• Gardez ce fichier en sécurité
+• Ne partagez jamais vos informations de connexion
+• Changez votre code d'accès régulièrement
+• Déconnectez-vous après chaque utilisation
+• Signalez toute activité suspecte à l'administrateur
+
+================================================================
+🆘 SUPPORT ET AIDE
+================================================================
+En cas de problème :
+• Contactez l'administrateur du site
+• Vérifiez que vous utilisez la bonne URL
+• Assurez-vous que votre navigateur est à jour
+
+================================================================
+📱 ACCÈS MOBILE
+================================================================
+Vous pouvez également vous connecter depuis :
+• Votre smartphone
+• Votre tablette
+• Tout appareil avec un navigateur web
+
+================================================================
+🎯 PREMIÈRES ÉTAPES APRÈS CONNEXION
+================================================================
+1. ✅ Vérifiez vos informations personnelles
+2. 🔒 Changez votre code d'accès
+3. 📧 Mettez à jour votre adresse email si nécessaire
+4. 🎨 Personnalisez votre profil
+5. 📚 Consultez le guide utilisateur
+
+================================================================
+🏁 FIN DU FICHIER D'INSTALLATION
+================================================================
+Ce fichier contient toutes les informations nécessaires
+pour accéder à votre compte Gaisio.
+
+Bonne utilisation !
+L'équipe GAISIO
+================================================================

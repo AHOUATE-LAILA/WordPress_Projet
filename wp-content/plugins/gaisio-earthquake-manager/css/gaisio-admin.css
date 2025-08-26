@@ -1,0 +1,1780 @@
+/* Styles pour l'administration Gaisio */
+
+/* Background global pour les pages d'administration */
+body {
+    background-color: #C4B4FF !important;
+    background: #C4B4FF !important;
+}
+
+.gaisio-admin-tabs {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+    padding: 2rem;
+    background: linear-gradient(135deg, #ffffff, #f8f9fa);
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e1e8ed;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.tab-button {
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    border: 2px solid #e1e8ed;
+    border-radius: 15px;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    color: #2c3e50;
+    position: relative;
+    overflow: hidden;
+    min-width: 160px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.tab-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(33, 150, 243, 0.1), transparent);
+    transition: left 0.6s ease;
+}
+
+.tab-button:hover::before {
+    left: 100%;
+}
+
+.tab-button:hover {
+    background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+    border-color: #2196f3;
+    color: #1976d2;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(33, 150, 243, 0.3);
+}
+
+.tab-button.active {
+    background: linear-gradient(135deg, #2196f3, #1976d2);
+    border-color: #1976d2;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(33, 150, 243, 0.4);
+    position: relative;
+}
+
+.tab-button.active::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 3px;
+    background: linear-gradient(90deg, #ff9800, #ff5722);
+    border-radius: 2px;
+    animation: pulse-glow 2s ease-in-out infinite;
+}
+
+@keyframes pulse-glow {
+    0%, 100% { opacity: 1; box-shadow: 0 0 5px rgba(255, 152, 0, 0.5); }
+    50% { opacity: 0.7; box-shadow: 0 0 20px rgba(255, 152, 0, 0.8); }
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.gaisio-admin-section {
+    background: linear-gradient(135deg, #ffffff, #fafbfc);
+    border-radius: 20px;
+    padding: 2.5rem;
+    margin-bottom: 3rem;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e1e8ed;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.gaisio-admin-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #667eea, #764ba2, #f093fb);
+    background-size: 200% 100%;
+    animation: gradient-shift 3s ease-in-out infinite;
+}
+
+@keyframes gradient-shift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+.gaisio-admin-section:last-child {
+    margin-bottom: 0;
+}
+
+.gaisio-admin-section h2 {
+    color: #2c3e50;
+    margin-bottom: 2rem;
+    font-size: 1.8rem;
+    font-weight: 700;
+    text-align: center;
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+.gaisio-admin-section h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(90deg, #667eea, #764ba2);
+    border-radius: 2px;
+    animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: #2c3e50;
+    font-size: 0.95rem;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 1rem;
+    border: 2px solid #e1e8ed;
+    border-radius: 12px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background: linear-gradient(135deg, #ffffff, #fafbfc);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    color: #2c3e50;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: #2196f3;
+    box-shadow: 0 0 0 3px rgba(33, 150, 243, 0.1);
+    background: white;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.gaisio-btn {
+    background: linear-gradient(135deg, #2196f3, #1976d2);
+    color: white;
+    border: none;
+    border-radius: 15px;
+    padding: 1rem 2.5rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(33, 150, 243, 0.3);
+    min-width: 140px;
+    text-align: center;
+}
+
+.gaisio-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.6s ease;
+}
+
+
+.gaisio-btn:hover {
+    background: linear-gradient(135deg, #1976d2, #1565c0);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(33, 150, 243, 0.3);
+    color: white;
+    text-decoration: none;
+}
+
+.gaisio-btn:active {
+    transform: translateY(0);
+}
+
+.gaisio-btn-danger {
+    background: linear-gradient(135deg, #f44336, #d32f2f);
+}
+
+.gaisio-btn-danger:hover {
+    background: linear-gradient(135deg, #d32f2f, #c62828);
+    box-shadow: 0 6px 20px rgba(244, 67, 54, 0.3);
+}
+
+.gaisio-btn-success {
+    background: linear-gradient(135deg, #4caf50, #388e3c);
+}
+
+.gaisio-btn-success:hover {
+    background: linear-gradient(135deg, #388e3c, #2e7d32);
+    box-shadow: 0 6px 20px rgba(76, 175, 80, 0.3);
+}
+
+.gaisio-btn-primary {
+    background: linear-gradient(135deg, #ff9800, #f57c00);
+    color: white;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 6px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    margin-right: 0.5rem;
+}
+
+.gaisio-btn-primary:hover {
+    background: linear-gradient(135deg, #f57c00, #e65100);
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(255, 152, 0, 0.3);
+}
+
+.gaisio-btn.updating {
+    background: linear-gradient(135deg, #9c27b0, #7b1fa2);
+}
+
+.gaisio-btn.updating:hover {
+    background: linear-gradient(135deg, #7b1fa2, #6a1b9a);
+}
+
+/* Grille des actualités */
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+/* Cartes d'actualités */
+.news-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    border: 1px solid #e1e8ed;
+}
+
+.news-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+.news-card-image {
+    position: relative;
+    height: 150px;
+    overflow: hidden;
+}
+
+.news-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.news-card:hover .news-card-image img {
+    transform: scale(1.05);
+}
+
+.news-card-status {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    padding: 0.2rem 0.6rem;
+    border-radius: 15px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: white;
+    backdrop-filter: blur(10px);
+}
+
+.news-card-status.published {
+    background: rgba(46, 125, 50, 0.9);
+}
+
+.news-card-status.draft {
+    background: rgba(245, 124, 0, 0.9);
+}
+
+.news-card-content {
+    padding: 1rem;
+}
+
+.news-card-title {
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+.news-card-excerpt {
+    color: #5a6c7d;
+    margin-bottom: 0.75rem;
+    line-height: 1.4;
+    font-size: 0.85rem;
+}
+
+.news-card-meta {
+    margin-bottom: 0.75rem;
+}
+
+.news-card-date {
+    font-size: 0.8rem;
+    color: #7f8c8d;
+    font-weight: 500;
+}
+
+.news-card-actions {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.news-card-actions .gaisio-btn {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.8rem;
+    flex: 1;
+    min-width: 100px;
+}
+
+/* Ancien style pour compatibilité */
+.news-item {
+    background: #f8f9fa;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid #e1e8ed;
+    transition: all 0.3s ease;
+}
+
+.news-item:hover {
+    background: white;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+}
+
+.news-item h3 {
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.news-item p {
+    color: #5a6c7d;
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.news-item .news-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.85rem;
+    color: #7f8c8d;
+    margin-bottom: 1rem;
+}
+
+.news-status {
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.news-status.published {
+    background: #e8f5e8;
+    color: #2e7d32;
+}
+
+.news-status.draft {
+    background: #fff3e0;
+    color: #f57c00;
+}
+
+.news-actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+/* Liste des utilisateurs */
+.user-item {
+    background: #f8f9fa;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid #e1e8ed;
+    transition: all 0.3s ease;
+}
+
+.user-item:hover {
+    background: white;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+}
+
+.user-item h3 {
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.user-item .user-email {
+    color: #5a6c7d;
+    margin-bottom: 0.5rem;
+}
+
+.user-item .user-meta {
+    font-size: 0.85rem;
+    color: #7f8c8d;
+    margin-bottom: 1rem;
+}
+
+.user-actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+/* Statistiques */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.stat-card {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-radius: 12px;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+}
+
+.stat-card h3 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.stat-card p {
+    font-size: 1rem;
+    opacity: 0.9;
+    margin: 0;
+}
+
+/* Messages */
+.message {
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.message.success {
+    background: #e8f5e8;
+    color: #2e7d32;
+    border: 1px solid #a5d6a7;
+}
+
+.message.error {
+    background: #ffebee;
+    color: #c62828;
+    border: 1px solid #ef9a9a;
+}
+
+.message.info {
+    background: #e3f2fd;
+    color: #1976d2;
+    border: 1px solid #90caf9;
+}
+
+/* Loading */
+.loading {
+    text-align: center;
+    padding: 2rem;
+    color: #7f8c8d;
+    font-style: italic;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .gaisio-admin-tabs {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .tab-button {
+        text-align: center;
+    }
+    
+    .gaisio-admin-section {
+        padding: 1.5rem;
+    }
+    
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .news-actions,
+    .user-actions {
+        flex-direction: column;
+    }
+    
+    .news-item .news-meta {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    
+    .news-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .news-card-actions {
+        flex-direction: column;
+    }
+    
+    .news-card-actions .gaisio-btn {
+        min-width: auto;
+    }
+    
+    /* Menu responsive */
+    .gaisio-admin-menu {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem;
+    }
+    
+    .gaisio-menu-nav {
+        gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .gaisio-menu-user {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .logo-text {
+        font-size: 1.2rem;
+    }
+    
+    .logo-icon {
+        width: 30px;
+        height: 30px;
+    }
+    
+    .logo-center {
+        width: 8px;
+        height: 8px;
+    }
+    
+    .logo-rays {
+        width: 30px;
+        height: 30px;
+    }
+}
+
+/* Styles pour la page d'administration publique */
+.gaisio-admin-public {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+/* Menu d'administration */
+.gaisio-admin-menu {
+    background: linear-gradient(135deg, #1a1a1a, #2c3e50);
+    color: white;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+/* Logo Gaisio */
+.gaisio-menu-logo {
+    display: flex;
+    align-items: center;
+}
+
+.gaisio-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.logo-icon {
+    position: relative;
+    width: 40px;
+    height: 40px;
+}
+
+.logo-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 12px;
+    height: 12px;
+    background: white;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+    z-index: 2;
+}
+
+.logo-rays {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40px;
+    height: 40px;
+    background: conic-gradient(from 0deg, transparent 0deg, #2196f3 10deg, transparent 20deg, #2196f3 30deg, transparent 40deg, #2196f3 50deg, transparent 60deg, #2196f3 70deg, transparent 80deg, #2196f3 90deg, transparent 100deg, #2196f3 110deg, transparent 120deg, #2196f3 130deg, transparent 140deg, #2196f3 150deg, transparent 160deg, #2196f3 170deg, transparent 180deg, #2196f3 190deg, transparent 200deg, #2196f3 210deg, transparent 220deg, #2196f3 230deg, transparent 240deg, #2196f3 250deg, transparent 260deg, #2196f3 270deg, transparent 280deg, #2196f3 290deg, transparent 300deg, #2196f3 310deg, transparent 320deg, #2196f3 330deg, transparent 340deg, #2196f3 350deg);
+    border-radius: 50%;
+    animation: rotate 4s linear infinite;
+}
+
+@keyframes rotate {
+    from { transform: translate(-50%, -50%) rotate(0deg); }
+    to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+.logo-text {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: white;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Navigation du menu */
+.gaisio-menu-nav {
+    display: flex;
+    gap: 2rem;
+}
+
+.menu-item {
+    color: #bdc3c7;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.menu-item:hover {
+    color: white;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.menu-item.active {
+    color: white;
+    background: rgba(33, 150, 243, 0.3);
+    border: 1px solid rgba(33, 150, 243, 0.5);
+}
+
+/* Section utilisateur */
+.gaisio-menu-user {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.user-name {
+    color: #ecf0f1;
+    font-weight: 500;
+}
+
+.logout-btn {
+    color: #e74c3c;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.logout-btn:hover {
+    background: rgba(231, 76, 60, 0.2);
+    color: #ff6b6b;
+}
+
+.gaisio-admin-header {
+    text-align: center;
+    margin: 2rem;
+    margin-bottom: 3rem;
+    padding: 2rem;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+}
+
+.gaisio-admin-header h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.gaisio-admin-header p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    margin: 0;
+}
+
+.gaisio-admin-error {
+    text-align: center;
+    padding: 3rem;
+    background: #ffebee;
+    border: 2px solid #ef9a9a;
+    border-radius: 15px;
+    color: #c62828;
+    margin: 2rem auto;
+    max-width: 600px;
+}
+
+.gaisio-admin-error h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.gaisio-admin-error p {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Styles pour la gestion des utilisateurs */
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: #2c3e50;
+    font-size: 0.95rem;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 0.75rem;
+    border: 2px solid #e1e8ed;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    background: #fafbfc;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: #2196f3;
+    box-shadow: 0 0 0 3px rgba(33, 150, 243, 0.1);
+    background: white;
+}
+
+@media (max-width: 768px) {
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+}
+
+.users-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.user-card {
+    background: white;
+    border: 1px solid #e1e8ed;
+    border-radius: 12px;
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.user-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    border-color: #2196f3;
+}
+
+.user-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #e1e8ed;
+}
+
+.user-card-name {
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+.user-card-role {
+    background: #e3f2fd;
+    color: #1976d2;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.user-card-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.user-info p {
+    margin: 0.5rem 0;
+    color: #555;
+    font-size: 0.95rem;
+}
+
+.user-info strong {
+    color: #2c3e50;
+    font-weight: 600;
+}
+
+.user-card-actions {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.user-card-actions .gaisio-btn {
+    flex: 1;
+    min-width: 120px;
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+}
+
+.gaisio-btn-warning {
+    background: #ff9800;
+    border-color: #f57c00;
+    color: white;
+}
+
+.gaisio-btn-warning:hover {
+    background: #f57c00;
+    border-color: #e65100;
+}
+
+.gaisio-btn-download {
+    background: #4caf50;
+    border-color: #388e3c;
+    color: white;
+}
+
+.gaisio-btn-download:hover {
+    background: #388e3c;
+    border-color: #2e7d32;
+}
+
+.gaisio-btn-download:disabled {
+    background: #a5d6a7;
+    border-color: #81c784;
+    color: #2e7d32;
+}
+
+@media (max-width: 768px) {
+    .users-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .user-card-actions {
+        flex-direction: column;
+    }
+    
+    .user-card-actions .gaisio-btn {
+        width: 100%;
+    }
+}
+
+.gaisio-btn:disabled {
+    background: #cccccc;
+    border-color: #bbbbbb;
+    color: #666666;
+    cursor: not-allowed;
+}
+
+.gaisio-btn:disabled:hover {
+    background: #cccccc;
+    border-color: #bbbbbb;
+} 
+
+/* Styles pour les statistiques admin */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.stat-card {
+    background: white;
+    border-radius: 15px;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e9ecef;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.stat-card.primary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+}
+
+.stat-card.primary .stat-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.stat-card.primary h3 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin: 0 0 0.5rem 0;
+    color: white;
+}
+
+.stat-card.primary p {
+    font-size: 1rem;
+    margin: 0;
+    opacity: 0.9;
+    color: white;
+}
+
+.stat-card:not(.primary) {
+    background: white;
+    color: #2c3e50;
+}
+
+.stat-card:not(.primary) .stat-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    display: block;
+    color: #667eea;
+}
+
+.stat-card:not(.primary) h3 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 0 0 0.5rem 0;
+    color: #2c3e50;
+}
+
+.stat-card:not(.primary) p {
+    font-size: 0.9rem;
+    margin: 0;
+    color: #6c757d;
+}
+
+/* Informations détaillées */
+.stats-details {
+    background: white;
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e9ecef;
+}
+
+.stats-details h3 {
+    color: #2c3e50;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+    border-bottom: 2px solid #e9ecef;
+    padding-bottom: 0.5rem;
+}
+
+.details-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+}
+
+.detail-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background: #f8f9fa;
+    border-radius: 10px;
+    border-left: 4px solid #667eea;
+}
+
+.detail-item strong {
+    color: #2c3e50;
+    font-weight: 600;
+}
+
+.detail-item span {
+    color: #6c757d;
+    font-weight: 500;
+}
+
+.status-active {
+    color: #28a745 !important;
+    font-weight: 600;
+    background: #d4edda;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .stats-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .details-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .detail-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    
+    .stat-card {
+        padding: 1.5rem;
+    }
+    
+    .stat-card.primary h3 {
+        font-size: 2rem;
+    }
+    
+    .stat-card:not(.primary) h3 {
+        font-size: 1.5rem;
+    }
+} 
+
+/* Styles pour le footer admin */
+.gaisio-admin-footer {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid #e9ecef;
+    text-align: center;
+}
+
+.gaisio-admin-footer .gaisio-footer {
+    background: linear-gradient(135deg, #2c3e50, #34495e);
+    color: #ecf0f1;
+    padding: 20px 0;
+    margin: 0;
+    border-top: 1px solid #34495e;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.gaisio-admin-footer .gaisio-footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.gaisio-admin-footer .gaisio-footer-content p {
+    margin: 0;
+    font-size: 0.9rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #bdc3c7;
+    opacity: 1;
+}
+
+.gaisio-admin-footer .gaisio-footer-content p strong {
+    color: #ecf0f1;
+    font-weight: 600;
+}
+
+/* Responsive design pour le footer admin */
+@media (max-width: 768px) {
+    .gaisio-admin-footer {
+        margin-top: 2rem;
+        padding-top: 1.5rem;
+    }
+    
+    .gaisio-admin-footer .gaisio-footer {
+        padding: 15px 0;
+    }
+    
+    .gaisio-admin-footer .gaisio-footer-content {
+        padding: 0 15px;
+    }
+    
+    .gaisio-admin-footer .gaisio-footer-content p {
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .gaisio-admin-footer .gaisio-footer {
+        padding: 12px 0;
+    }
+    
+    .gaisio-admin-footer .gaisio-footer-content p {
+        font-size: 0.8rem;
+    }
+} 
+
+/* Styles pour les tableaux et listes d'administration */
+.gaisio-admin-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    margin: 2rem 0;
+}
+
+.gaisio-admin-table th {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    padding: 1.2rem 1rem;
+    font-weight: 600;
+    font-size: 1rem;
+    text-align: left;
+    border: none;
+}
+
+.gaisio-admin-table th:first-child {
+    border-top-left-radius: 15px;
+}
+
+.gaisio-admin-table th:last-child {
+    border-top-right-radius: 15px;
+}
+
+.gaisio-admin-table td {
+    padding: 1rem;
+    border-bottom: 1px solid #e9ecef;
+    color: #2c3e50;
+    font-size: 0.95rem;
+}
+
+.gaisio-admin-table tr:last-child td {
+    border-bottom: none;
+}
+
+.gaisio-admin-table tr:hover {
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    transform: scale(1.01);
+    transition: all 0.3s ease;
+}
+
+/* Styles pour les listes d'administration */
+.gaisio-admin-list {
+    list-style: none;
+    padding: 0;
+    margin: 2rem 0;
+}
+
+.gaisio-admin-list li {
+    background: linear-gradient(135deg, #ffffff, #f8f9fa);
+    margin-bottom: 1rem;
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 1px solid #e1e8ed;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.gaisio-admin-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+}
+
+.gaisio-admin-list li:hover {
+    transform: translateX(5px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Styles pour les cartes d'information */
+.info-card {
+    background: linear-gradient(135deg, #ffffff, #f8f9fa);
+    border-radius: 15px;
+    padding: 2rem;
+    margin: 1.5rem 0;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e1e8ed;
+    position: relative;
+    overflow: hidden;
+}
+
+.info-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #667eea, #764ba2, #f093fb);
+}
+
+.info-card h4 {
+    color: #2c3e50;
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.info-card p {
+    color: #6c757d;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Styles pour les messages de statut */
+.status-message {
+    padding: 1rem 1.5rem;
+    border-radius: 10px;
+    margin: 1rem 0;
+    font-weight: 500;
+    position: relative;
+    overflow: hidden;
+}
+
+.status-message.success {
+    background: linear-gradient(135deg, #d4edda, #c3e6cb);
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.status-message.error {
+    background: linear-gradient(135deg, #f8d7da, #f5c6cb);
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+.status-message.info {
+    background: linear-gradient(135deg, #d1ecf1, #bee5eb);
+    color: #0c5460;
+    border: 1px solid #bee5eb;
+}
+
+.status-message.warning {
+    background: linear-gradient(135deg, #fff3cd, #ffeaa7);
+    color: #856404;
+    border: 1px solid #ffeaa7;
+}
+
+/* Responsive design pour l'administration */
+@media (max-width: 768px) {
+    .gaisio-admin-tabs {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1.5rem;
+    }
+    
+    .tab-button {
+        min-width: auto;
+        width: 100%;
+    }
+    
+    .gaisio-admin-section {
+        padding: 1.5rem;
+        margin-bottom: 2rem;
+    }
+    
+    .gaisio-admin-section h2 {
+        font-size: 1.5rem;
+    }
+    
+    .gaisio-admin-table {
+        font-size: 0.9rem;
+    }
+    
+    .gaisio-admin-table th,
+    .gaisio-admin-table td {
+        padding: 0.75rem 0.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .gaisio-admin-tabs {
+        padding: 1rem;
+    }
+    
+    .gaisio-admin-section {
+        padding: 1rem;
+    }
+    
+    .gaisio-btn {
+        padding: 0.75rem 1.5rem;
+        font-size: 1rem;
+        min-width: 120px;
+    }
+} 
+
+/* Styles pour l'en-tête admin avec bouton de déconnexion */
+.gaisio-admin-header {
+    background: linear-gradient(135deg, #1a1a1a 0%, #2c3e50 100%);
+    color: white;
+    padding: 2rem;
+    border-radius: 15px 15px 0 0;
+    margin-bottom: 0;
+    position: relative;
+}
+
+.admin-header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.admin-title h1 {
+    margin: 0 0 0.5rem 0;
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: white;
+}
+
+.admin-title p {
+    margin: 0;
+    opacity: 0.9;
+    font-size: 1.1rem;
+}
+
+.admin-actions {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.admin-logout-btn {
+    background: linear-gradient(135deg, #e74c3c, #c0392b);
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3);
+}
+
+.admin-logout-btn:hover {
+    background: linear-gradient(135deg, #c0392b, #a93226);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(231, 76, 60, 0.4);
+}
+
+/* Styles améliorés pour le menu admin */
+.gaisio-admin-tabs {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 0 0 20px 20px;
+    padding: 2rem 2.5rem;
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    box-shadow: 0 15px 35px rgba(102, 126, 234, 0.2);
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.gaisio-admin-tabs::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #667eea, #764ba2, #f093fb, #f5576c);
+    animation: rainbow 4s ease-in-out infinite;
+}
+
+@keyframes rainbow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Logo admin */
+.admin-menu-left {
+    display: flex;
+    align-items: center;
+}
+
+.admin-logo {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    padding: 0.8rem 1.2rem;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 16px;
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.admin-logo:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+    border-color: rgba(255, 255, 255, 0.4);
+}
+
+.admin-logo-img {
+    width: 55px;
+    height: 45px;
+    filter: drop-shadow(0 3px 10px rgba(0, 0, 0, 0.3));
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: 8px;
+}
+
+.admin-logo:hover .admin-logo-img {
+    transform: scale(1.08);
+    filter: drop-shadow(0 6px 18px rgba(0, 0, 0, 0.4));
+}
+
+.admin-logo-text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+.logo-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #ffffff;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.logo-subtitle {
+    font-size: 0.8rem;
+    color: #bdc3c7;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Menu central */
+.admin-menu-center {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.tab-button {
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    color: #ffffff;
+    padding: 1rem 1.8rem;
+    border-radius: 14px;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    backdrop-filter: blur(15px);
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    font-weight: 600;
+    position: relative;
+    overflow: hidden;
+    font-size: 1rem;
+    letter-spacing: 0.3px;
+}
+
+.tab-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25), transparent);
+    transition: left 0.6s ease;
+}
+
+.tab-button:hover::before {
+    left: 100%;
+}
+
+.tab-button:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+    border-color: rgba(255, 255, 255, 0.4);
+}
+
+.tab-button.active {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    border-color: #667eea;
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+    transform: translateY(-3px);
+}
+
+.tab-button.active:hover {
+    background: linear-gradient(135deg, #5a6fd8, #6a4190);
+    transform: translateY(-4px);
+}
+
+.tab-icon {
+    font-size: 1.2rem;
+    filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.3));
+}
+
+.tab-text {
+    font-weight: 600;
+    letter-spacing: 0.3px;
+}
+
+/* Bouton de déconnexion */
+.admin-menu-right {
+    display: flex;
+    align-items: center;
+}
+
+.admin-logout-btn {
+    background: linear-gradient(135deg, #ff6b6b, #ee5a52);
+    color: white;
+    border: none;
+    padding: 1rem 1.8rem;
+    border-radius: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 8px 25px rgba(255, 107, 107, 0.3);
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    position: relative;
+    overflow: hidden;
+    font-size: 1rem;
+    letter-spacing: 0.3px;
+}
+
+.admin-logout-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25), transparent);
+    transition: left 0.6s ease;
+}
+
+.admin-logout-btn:hover::before {
+    left: 100%;
+}
+
+.admin-logout-btn:hover {
+    background: linear-gradient(135deg, #ee5a52, #d63031);
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 15px 35px rgba(255, 107, 107, 0.4);
+}
+
+.logout-icon {
+    font-size: 1.1rem;
+    filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.3));
+}
+
+.logout-text {
+    font-weight: 600;
+    letter-spacing: 0.3px;
+}
+
+/* Responsive design pour le menu admin */
+@media (max-width: 1024px) {
+    .gaisio-admin-tabs {
+        padding: 1.2rem 1.5rem;
+        gap: 1rem;
+    }
+    
+    .admin-logo {
+        padding: 0.4rem 0.8rem;
+    }
+    
+    .admin-logo-img {
+        width: 45px;
+        height: 36px;
+    }
+    
+    .logo-title {
+        font-size: 1.2rem;
+    }
+    
+    .logo-subtitle {
+        font-size: 0.7rem;
+    }
+    
+    .tab-button {
+        padding: 0.7rem 1.2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .gaisio-admin-tabs {
+        flex-direction: column;
+        gap: 1.5rem;
+        padding: 1.5rem;
+    }
+    
+    .admin-menu-center {
+        order: 2;
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .admin-menu-left {
+        order: 1;
+    }
+    
+    .admin-menu-right {
+        order: 3;
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .tab-button {
+        flex: 1;
+        min-width: 120px;
+        justify-content: center;
+    }
+    
+    .admin-logout-btn {
+        width: 100%;
+        max-width: 200px;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .gaisio-admin-tabs {
+        padding: 1rem;
+        gap: 1rem;
+    }
+    
+    .admin-logo {
+        padding: 0.3rem 0.6rem;
+        gap: 0.8rem;
+    }
+    
+    .admin-logo-img {
+        width: 40px;
+        height: 32px;
+    }
+    
+    .logo-title {
+        font-size: 1.1rem;
+    }
+    
+    .logo-subtitle {
+        font-size: 0.65rem;
+    }
+    
+    .tab-button {
+        padding: 0.6rem 1rem;
+        font-size: 0.9rem;
+    }
+    
+    .tab-icon {
+        font-size: 1rem;
+    }
+    
+    .admin-logout-btn {
+        padding: 0.7rem 1.2rem;
+        font-size: 0.9rem;
+    }
+} 

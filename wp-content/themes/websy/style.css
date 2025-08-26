@@ -1,0 +1,498 @@
+/*
+Theme Name: Websy
+Theme URI: https://www.nayrathemes.com/websy-free/
+Author: Nayra Themes
+Author URI: https://www.nayrathemes.com/
+Description: A powerful next generation theme for upcoming generations and traditional UI that focuses on the color combinations of solid and gradient colors, along with cool animations and attractive features. It's perfect for any type of business. View the demo of Websy Pro https://www.nayrathemes.com/demo/pro/?theme=websy
+Template: webique
+Version: 1.0
+Tested up to: 6.8
+Requires PHP: 5.6
+Requires at least: 4.7
+License: GPLv3 or later
+License URI:  https://www.gnu.org/licenses/gpl-3.0.html
+Text Domain: websy
+Slug: websy
+Tags: one-column, two-columns, right-sidebar, flexible-header, custom-background, custom-colors, custom-header, custom-menu,  custom-logo, featured-image-header, featured-images, footer-widgets, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready, blog, photography, portfolio, editor-style, grid-layout, rtl-language-support
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+
+*/
+
+/* Background global pour toutes les pages du thème */
+body {
+    background-color: #C4B4FF !important;
+    background: #C4B4FF !important;
+}
+
+#AVMenu.menubar {
+	min-width: 100px;
+	min-height: 55px;
+}
+
+.slider-wrapper.style2 .thumb-box .owl-carousel .owl-stage {
+	margin: auto;
+}
+
+
+body.rtl .theme-slider div.theme-content {
+	direction: rtl;
+}
+
+body.rtl .main-slider2 .theme-content-offer {
+	float: left;
+	margin-right: 0;
+	margin-left: 10px;
+}
+
+.features-image {
+	/* background-position: unset !important; */
+	background-attachment: fixed;
+}
+
+body.rtl .features-section #jarallax-container-0 {
+	left: unset !important;
+	right: 0px;
+	width: 50% !important;
+}
+
+body.rtl .quote-right-box {
+	left: -41px;
+	right: unset;
+	transform: translateY(-50%) rotate(45deg);
+}
+
+body.rtl .quote-right-box span {
+	right: 8px;
+	left: unset;
+	transform: translateY(-50%) rotate(315deg);
+}
+
+body.rtl .testimonial-slider .testimonial-item {
+	direction: rtl;
+}
+
+body.rtl .testimonial-content {
+	text-align: right;
+}
+
+body.rtl .testimonial-footer .brand {
+	padding-left: 0;
+	padding-right: 5px;
+}
+
+body.rtl .testimonial-author {
+	direction: ltr;
+}
+
+@media (min-width: 992px) {
+	body.rtl .header.header-two .menu-box {
+		left: unset;
+		right: 0;
+	}
+
+	body.rtl .header.header-two .ps-md-5:has(.theme-menu) {
+		padding-right: 3rem !important;
+		padding-left: 0 !important;
+	}
+
+	body.rtl .features-section::before {
+		transform: rotate(180deg);
+	}
+}
+
+/* Styles pour le menu de la page d'accueil */
+.homepage-menu-section {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 60px 0;
+    margin-bottom: 40px;
+}
+
+.homepage-menu-wrapper {
+    text-align: center;
+}
+
+.homepage-menu-container {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    padding: 20px 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+}
+
+.homepage-menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.homepage-menu li {
+    margin: 0;
+    padding: 0;
+}
+
+.homepage-menu a {
+    display: block;
+    padding: 12px 24px;
+    color: #333;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+    border-radius: 25px;
+    background: linear-gradient(45deg, #f093fb 0%, #f5576c 100%);
+    color: white;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.homepage-menu a:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(45deg, #4facfe 0%, #00f2fe 100%);
+}
+
+/* Section de contenu de bienvenue */
+.homepage-content-section {
+    padding: 60px 0;
+    background: #f8f9fa;
+}
+
+.welcome-message {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.welcome-message h2 {
+    color: #333;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.welcome-message p {
+    color: #666;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .homepage-menu {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .homepage-menu-container {
+        padding: 20px;
+        margin: 0 20px;
+    }
+    
+    .homepage-menu a {
+        text-align: center;
+        padding: 15px 20px;
+    }
+    
+    .welcome-message h2 {
+        font-size: 2rem;
+    }
+    
+    .welcome-message p {
+        font-size: 1.1rem;
+    }
+}
+
+/* Animation d'entrée */
+.homepage-menu-section {
+    animation: fadeInUp 0.8s ease-out;
+}
+
+.homepage-content-section {
+    animation: fadeInUp 1s ease-out 0.2s both;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Styles pour les variantes du shortcode */
+.homepage-menu-section-compact {
+    padding: 40px 0;
+}
+
+.homepage-menu-section-full-width {
+    padding: 80px 0;
+}
+
+.homepage-menu-section-full-width .homepage-menu-container {
+    max-width: 100%;
+    border-radius: 0;
+}
+
+.homepage-menu-bg-solid {
+    background: #667eea !important;
+}
+
+.homepage-menu-bg-transparent {
+    background: transparent !important;
+}
+
+.homepage-menu-bg-transparent .homepage-menu-container {
+    background: rgba(255, 255, 255, 0.9);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Styles pour le menu intégré dans le contenu */
+.homepage-menu-wrapper {
+    margin: 20px 0;
+}
+
+.homepage-menu-wrapper .homepage-menu-container {
+    margin: 0 auto;
+}
+
+/* Styles pour l'intégration dans les pages/articles */
+.entry-content .homepage-menu-section,
+.page-content .homepage-menu-section {
+    margin: 30px 0;
+}
+
+.entry-content .homepage-menu-wrapper,
+.page-content .homepage-menu-wrapper {
+    text-align: center;
+}
+
+/* Styles pour la section de signalement */
+.signalement-section {
+    background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
+    padding: 60px 0;
+    margin: 40px 0;
+    color: white;
+}
+
+.signalement-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.signalement-text {
+    flex: 1;
+    min-width: 300px;
+}
+
+.signalement-text h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: white;
+}
+
+.signalement-text p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 0;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.signalement-button {
+    flex-shrink: 0;
+}
+
+.btn-signaler {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: white;
+    color: #ff6b35;
+    padding: 15px 30px;
+    border: 2px solid white;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn-signaler:hover {
+    background: transparent;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    text-decoration: none;
+}
+
+.btn-signaler i {
+    font-size: 1.2rem;
+}
+
+/* Styles pour le modal et le formulaire */
+.modal-content {
+    border-radius: 15px;
+    border: none;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.modal-header {
+    background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
+    color: white;
+    border-radius: 15px 15px 0 0;
+    border-bottom: none;
+}
+
+.modal-header .close {
+    color: white;
+    opacity: 0.8;
+    text-shadow: none;
+}
+
+.modal-header .close:hover {
+    opacity: 1;
+}
+
+.modal-title {
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+/* Styles pour le formulaire */
+.signalement-form {
+    padding: 20px 0;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #333;
+}
+
+.form-control {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #e1e5e9;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background: #fff;
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: #ff6b35;
+    box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.1);
+}
+
+.form-control:required {
+    border-left: 4px solid #ff6b35;
+}
+
+textarea.form-control {
+    resize: vertical;
+    min-height: 100px;
+}
+
+/* Bouton de soumission */
+.form-actions {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.btn-signaler-submit {
+    background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
+    border: none;
+    color: white;
+    padding: 15px 40px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.btn-signaler-submit:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(255, 107, 53, 0.4);
+    background: linear-gradient(135deg, #e55a2b 0%, #e0851a 100%);
+    color: white;
+}
+
+.btn-signaler-submit i {
+    font-size: 1.1rem;
+}
+
+/* Responsive design pour la section de signalement */
+@media (max-width: 768px) {
+    .signalement-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+    
+    .signalement-text h2 {
+        font-size: 2rem;
+    }
+    
+    .signalement-text p {
+        font-size: 1.1rem;
+    }
+    
+    .btn-signaler {
+        padding: 12px 25px;
+        font-size: 1rem;
+    }
+    
+    .modal-dialog {
+        margin: 10px;
+    }
+}
+
+/* Animation d'entrée pour la section de signalement */
+.signalement-section {
+    animation: fadeInUp 0.8s ease-out;
+}
+
+/* Message de succès */
+.signalement-success {
+    background: #d4edda;
+    color: #155724;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #c3e6cb;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.signalement-error {
+    background: #f8d7da;
+    color: #721c24;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #f5c6cb;
+    margin-bottom: 20px;
+    text-align: center;
+}

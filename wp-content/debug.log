@@ -1,0 +1,15 @@
+[08-Aug-2025 12:02:51 UTC] PHP Warning:  mail(): Failed to connect to mailserver at &quot;localhost&quot; port 25, verify your &quot;SMTP&quot; and &quot;smtp_port&quot; setting in php.ini or use ini_set() in C:\xampp\htdocs\Wordpress3\wp-content\plugins\gaisio-earthquake-manager\simple-email-test.php on line 49
+[08-Aug-2025 12:03:20 UTC] PHP Warning:  mail(): Failed to connect to mailserver at &quot;localhost&quot; port 25, verify your &quot;SMTP&quot; and &quot;smtp_port&quot; setting in php.ini or use ini_set() in C:\xampp\htdocs\Wordpress3\wp-content\plugins\gaisio-earthquake-manager\simple-email-test.php on line 49
+[08-Aug-2025 12:27:38 UTC] Gaisio: admin_create_user appelé
+[08-Aug-2025 12:27:38 UTC] Gaisio: Email reçu: ahouatefatima3@gmail.com
+[08-Aug-2025 12:27:38 UTC] Gaisio: Nom d'affichage reçu: Fatima
+[08-Aug-2025 12:27:38 UTC] Gaisio: Tentative d'envoi d'email à ahouatefatima3@gmail.com
+[08-Aug-2025 12:27:38 UTC] Gaisio: Sujet: [] Vos informations de connexion
+[08-Aug-2025 12:27:38 UTC] Gaisio: Site: 
+[08-Aug-2025 12:27:38 UTC] Gaisio: URL: http://localhost/WordPress3
+[08-Aug-2025 12:27:38 UTC] Gaisio: Username: Fatima
+[08-Aug-2025 12:27:38 UTC] Gaisio: Access code: 9ACUPWZN
+[08-Aug-2025 12:27:39 UTC] Gaisio: Erreur lors de l'envoi de l'email HTML à ahouatefatima3@gmail.com
+[08-Aug-2025 12:27:39 UTC] Gaisio: Test avec message texte - Échec
+[08-Aug-2025 12:27:41 UTC] PHP Warning:  mail(): Failed to connect to mailserver at &quot;localhost&quot; port 25, verify your &quot;SMTP&quot; and &quot;smtp_port&quot; setting in php.ini or use ini_set() in C:\xampp\htdocs\Wordpress3\wp-content\plugins\gaisio-earthquake-manager\gaisio-earthquake-manager.php on line 1797
+[08-Aug-2025 12:27:41 UTC] Gaisio: Test alternatif mail() - Échec

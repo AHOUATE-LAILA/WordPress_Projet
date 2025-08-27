@@ -625,7 +625,7 @@ class GaisioEarthquakeManager {
                         <h3 style="margin: 0; color: white;">✅ Connecté : <?php echo wp_get_current_user()->display_name; ?></h3>
                     </div>
                     <div class="gaisio-auth-buttons">
-                        <a href="<?php echo home_url('/login/'); ?>" class="gaisio-btn-logout">
+                        <a href="<?php echo home_url('/11-2/'); ?>" class="gaisio-btn-logout">
                             🚪 Se déconnecter
                         </a>
                     </div>
@@ -1643,8 +1643,8 @@ class GaisioEarthquakeManager {
         <script>
         function adminLogout() {
             if (confirm('Êtes-vous sûr de vouloir vous déconnecter ?')) {
-                // Redirection directe vers la page de login
-                window.location.href = '<?php echo home_url("/login/"); ?>';
+                // Redirection directe vers la page 11-2
+                window.location.href = '<?php echo home_url("/11-2/"); ?>';
             }
         }
         </script>
@@ -3045,7 +3045,7 @@ L\'équipe %s',
             wp_send_json_success(array(
             'message' => 'Connexion réussie ! Bienvenue ' . $authenticated_user->display_name,
             'user_info' => $user_info,
-            'redirect_url' => home_url('/gaisio/') // Redirection vers la page utilisateur demandée
+            'redirect_url' => home_url('/16-2/') // Redirection vers la page 16-2
         ));
     }
     
@@ -3060,8 +3060,8 @@ L\'équipe %s',
         wp_logout();
         
         wp_send_json_success(array(
-            'message' => 'Déconnexion réussie. Vous avez été redirigé vers le formulaire de connexion.',
-            'redirect_url' => home_url('/login/') // Redirection vers le formulaire de connexion
+            'message' => 'Déconnexion réussie. Vous avez été redirigé vers la page 11-2.',
+            'redirect_url' => home_url('/11-2/') // Redirection vers la page 11-2
         ));
     }
     
@@ -3097,7 +3097,7 @@ L\'équipe %s',
         
         wp_send_json_success(array(
             'message' => 'Connexion admin réussie',
-            'redirect_url' => home_url('/admin/')
+            'redirect_url' => home_url('/13-2/')
         ));
     }
     

@@ -48,14 +48,14 @@ define( 'DB_COLLATE', '' );
  *
  * @since 2.6.0
  */
-define( 'AUTH_KEY',         'put your unique phrase here' );
-define( 'SECURE_AUTH_KEY',  'put your unique phrase here' );
-define( 'LOGGED_IN_KEY',    'put your unique phrase here' );
-define( 'NONCE_KEY',        'put your unique phrase here' );
-define( 'AUTH_SALT',        'put your unique phrase here' );
-define( 'SECURE_AUTH_SALT', 'put your unique phrase here' );
-define( 'LOGGED_IN_SALT',   'put your unique phrase here' );
-define( 'NONCE_SALT',       'put your unique phrase here' );
+define( 'AUTH_KEY',         'oszoa1qbldnl0ipkrckrukirkmnt6kzqun5vvhhludso2og9agqct4wey02pamzt' );
+define( 'SECURE_AUTH_KEY',  'mk8xngdnnu9mkzqyaftzwodgyfjadwya9uwthxoecwxqcd4idoqkihkrggoz5pdh' );
+define( 'LOGGED_IN_KEY',    'e9k5h8pwmieiwzsib9ixgxjkxtfrwvple4876mquqzjbqeau8gnmmcn7ttzj9bpp' );
+define( 'NONCE_KEY',        'efdkdrzcirte3rpvyem8vsvj96zy90vvsnkhes6mo2amngbsdnsgxbl7kafycmkw' );
+define( 'AUTH_SALT',        'b6j7ocbtrzqnhu6qdl0cvej912ndr2eg6u9ae6kmvxfzswxtaakngvz7ju9f3vix' );
+define( 'SECURE_AUTH_SALT', 'p11wjl4so6queyaoo81aeqmwlkthuv7yjjsk7snvks2ckikb8a98kzl9uyxdvdiz' );
+define( 'LOGGED_IN_SALT',   'tfguom7efmbviekxetrcw6ingaceahir5ty2vhic7pmfzbyis7aukz1bfo4lawhx' );
+define( 'NONCE_SALT',       'k7y6kwpe0lciddwn2spakyznujlxxys4i4llpggdwkgrnbqwtceeutmwljxgxm7k' );
 
 /**#@-*/
 
@@ -71,7 +71,7 @@ define( 'NONCE_SALT',       'put your unique phrase here' );
  *
  * @link https://developer.wordpress.org/advanced-administration/wordpress/wp-config/#table-prefix
  */
-$table_prefix = 'wp_';
+$table_prefix = 'wpde_';
 
 /**
  * For developers: WordPress debugging mode.

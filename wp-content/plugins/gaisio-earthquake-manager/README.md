@@ -57,7 +57,7 @@
 
 ### Administration
 ```php
-[gaisio_admin]           // Interface d'administration complète
+[gaisio_admin_page]           // Interface d'administration complète
 ```
 
 ## 🗄️ Structure de la Base de Données
